@@ -1,26 +1,99 @@
-2022-05-12 15:57:48.884 [main] INFO  com.example.springdemo.SpringDemoApplication:  Starting SpringDemoApplication using Java 1.8.0_131 on localhost with PID 2823 (/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes started by raoqingjia in /Users/raoqingjia/WebstormProjects/project_private/spring-demo)
-2022-05-12 15:57:48.888 [main] INFO  com.example.springdemo.SpringDemoApplication:  No active profile set, falling back to 1 default profile: "default"
-2022-05-12 15:57:49.515 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
-2022-05-12 15:57:49.516 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2022-05-12 15:57:49.528 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 6 ms. Found 0 MongoDB repository interfaces.
-2022-05-12 15:57:49.549 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
-2022-05-12 15:57:49.550 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-05-12 15:57:49.562 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
-2022-05-12 15:57:49.945 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat initialized with port(s): 8081 (http)
-2022-05-12 15:57:49.954 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Initializing ProtocolHandler ["http-nio-8081"]
-2022-05-12 15:57:49.955 [main] INFO  org.apache.catalina.core.StandardService:  Starting service [Tomcat]
-2022-05-12 15:57:49.955 [main] INFO  org.apache.catalina.core.StandardEngine:  Starting Servlet engine: [Apache Tomcat/9.0.58]
-2022-05-12 15:57:50.036 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring embedded WebApplicationContext
-2022-05-12 15:57:50.036 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:  Root WebApplicationContext: initialization completed in 1108 ms
-2022-05-12 15:57:50.165 [main] INFO  org.mongodb.driver.cluster:  Cluster created with settings {hosts=[10.248.50.224:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
-2022-05-12 15:57:50.290 [cluster-rtt-ClusterId{value='627cbdfe44870a37b56e88d5', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:1, serverValue:3769}] to 10.248.50.224:27017
-2022-05-12 15:57:50.290 [cluster-ClusterId{value='627cbdfe44870a37b56e88d5', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:2, serverValue:3768}] to 10.248.50.224:27017
-2022-05-12 15:57:50.291 [cluster-ClusterId{value='627cbdfe44870a37b56e88d5', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Monitor thread successfully connected to server with description ServerDescription{address=10.248.50.224:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=90375417}
-2022-05-12 15:57:50.476 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  sentinel master: [crm]
-2022-05-12 15:57:50.477 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.223:13001
-2022-05-12 15:57:50.478 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.224:13002
-2022-05-12 15:57:50.481 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  LettuceConnectionFactorySentinel bean created
-2022-05-12 15:57:50.688 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  StringRedisTemplateSentinel bean created
-2022-05-12 15:57:51.081 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Starting ProtocolHandler ["http-nio-8081"]
-2022-05-12 15:57:51.105 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat started on port(s): 8081 (http) with context path ''
-2022-05-12 15:57:51.116 [main] INFO  com.example.springdemo.SpringDemoApplication:  Started SpringDemoApplication in 2.728 seconds (JVM running for 3.252)
+2022-05-27 08:18:54.728 [cluster-ClusterId{value='628eed160ec4603fc68b51e9', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Exception in monitor thread while connecting to server 10.248.50.224:27017
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:701)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:579)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415)
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:374)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:216)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:718)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:576)
+	... 5 common frames omitted
+2022-05-27 17:36:12.076 [cluster-ClusterId{value='628eed160ec4603fc68b51e9', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Exception in monitor thread while connecting to server 10.248.50.224:27017
+com.mongodb.MongoSocketReadException: Exception receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:707)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:579)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:342)
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:96)
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:44)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:718)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:576)
+	... 10 common frames omitted
+2022-05-27 17:36:12.181 [lettuce-eventExecutorLoop-1-1] INFO  io.lettuce.core.protocol.ConnectionWatchdog:  Reconnecting, last destination was /10.248.50.224:12002
+2022-05-27 17:36:22.212 [lettuce-nioEventLoop-6-3] WARN  io.lettuce.core.RedisClient:  Cannot connect Redis Sentinel at redis://10.248.50.223:13001: java.util.concurrent.CompletionException: io.netty.channel.ConnectTimeoutException: connection timed out: /10.248.50.223:13001
+2022-05-27 17:36:32.086 [cluster-ClusterId{value='628eed160ec4603fc68b51e9', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Exception in monitor thread while connecting to server 10.248.50.224:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:180)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:107)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65)
+	... 4 common frames omitted
+2022-05-27 17:36:32.223 [lettuce-nioEventLoop-6-4] WARN  io.lettuce.core.RedisClient:  Cannot connect Redis Sentinel at redis://10.248.50.224:13002: java.util.concurrent.CompletionException: io.netty.channel.ConnectTimeoutException: connection timed out: /10.248.50.224:13002
+2022-05-27 17:36:32.224 [lettuce-nioEventLoop-6-4] WARN  io.lettuce.core.protocol.ConnectionWatchdog:  Cannot retrieve current address from socketAddressSupplier: io.lettuce.core.RedisConnectionException: Cannot connect to a Redis Sentinel: [redis://10.248.50.223:13001, redis://10.248.50.224:13002], reusing cached address /10.248.50.224:12002
+2022-05-27 17:36:42.243 [lettuce-nioEventLoop-6-5] WARN  io.lettuce.core.protocol.ConnectionWatchdog:  Cannot reconnect to [/10.248.50.224:12002]: connection timed out: /10.248.50.224:12002
+2022-05-27 17:36:42.265 [lettuce-eventExecutorLoop-1-2] INFO  io.lettuce.core.protocol.ConnectionWatchdog:  Reconnecting, last destination was /10.248.50.224:12002
+2022-05-27 17:36:52.277 [lettuce-nioEventLoop-6-6] WARN  io.lettuce.core.RedisClient:  Cannot connect Redis Sentinel at redis://10.248.50.223:13001: java.util.concurrent.CompletionException: io.netty.channel.ConnectTimeoutException: connection timed out: /10.248.50.223:13001
+2022-05-27 17:37:02.290 [lettuce-nioEventLoop-6-7] WARN  io.lettuce.core.RedisClient:  Cannot connect Redis Sentinel at redis://10.248.50.224:13002: java.util.concurrent.CompletionException: io.netty.channel.ConnectTimeoutException: connection timed out: /10.248.50.224:13002
+2022-05-27 17:37:02.291 [lettuce-nioEventLoop-6-7] WARN  io.lettuce.core.protocol.ConnectionWatchdog:  Cannot retrieve current address from socketAddressSupplier: io.lettuce.core.RedisConnectionException: Cannot connect to a Redis Sentinel: [redis://10.248.50.223:13001, redis://10.248.50.224:13002], reusing cached address /10.248.50.224:12002
+2022-05-27 17:37:12.303 [lettuce-nioEventLoop-6-8] WARN  io.lettuce.core.protocol.ConnectionWatchdog:  Cannot reconnect to [/10.248.50.224:12002]: connection timed out: /10.248.50.224:12002
+2022-05-27 17:37:12.368 [lettuce-eventExecutorLoop-1-4] INFO  io.lettuce.core.protocol.ConnectionWatchdog:  Reconnecting, last destination was /10.248.50.224:12002
+2022-05-27 17:37:22.374 [lettuce-nioEventLoop-6-1] WARN  io.lettuce.core.RedisClient:  Cannot connect Redis Sentinel at redis://10.248.50.223:13001: java.util.concurrent.CompletionException: io.netty.channel.ConnectTimeoutException: connection timed out: /10.248.50.223:13001
+2022-05-27 17:37:32.377 [lettuce-nioEventLoop-6-2] WARN  io.lettuce.core.RedisClient:  Cannot connect Redis Sentinel at redis://10.248.50.224:13002: java.util.concurrent.CompletionException: io.netty.channel.ConnectTimeoutException: connection timed out: /10.248.50.224:13002
+2022-05-27 17:37:32.378 [lettuce-nioEventLoop-6-2] WARN  io.lettuce.core.protocol.ConnectionWatchdog:  Cannot retrieve current address from socketAddressSupplier: io.lettuce.core.RedisConnectionException: Cannot connect to a Redis Sentinel: [redis://10.248.50.223:13001, redis://10.248.50.224:13002], reusing cached address /10.248.50.224:12002
+2022-05-27 17:37:42.384 [lettuce-nioEventLoop-6-3] WARN  io.lettuce.core.protocol.ConnectionWatchdog:  Cannot reconnect to [/10.248.50.224:12002]: connection timed out: /10.248.50.224:12002
+2022-05-27 17:37:42.467 [lettuce-eventExecutorLoop-1-8] INFO  io.lettuce.core.protocol.ConnectionWatchdog:  Reconnecting, last destination was /10.248.50.224:12002
+2022-05-27 17:37:52.475 [lettuce-nioEventLoop-6-4] WARN  io.lettuce.core.RedisClient:  Cannot connect Redis Sentinel at redis://10.248.50.223:13001: java.util.concurrent.CompletionException: io.netty.channel.ConnectTimeoutException: connection timed out: /10.248.50.223:13001
+2022-05-27 17:38:02.479 [lettuce-nioEventLoop-6-5] WARN  io.lettuce.core.RedisClient:  Cannot connect Redis Sentinel at redis://10.248.50.224:13002: java.util.concurrent.CompletionException: io.netty.channel.ConnectTimeoutException: connection timed out: /10.248.50.224:13002
+2022-05-27 17:38:02.480 [lettuce-nioEventLoop-6-5] WARN  io.lettuce.core.protocol.ConnectionWatchdog:  Cannot retrieve current address from socketAddressSupplier: io.lettuce.core.RedisConnectionException: Cannot connect to a Redis Sentinel: [redis://10.248.50.223:13001, redis://10.248.50.224:13002], reusing cached address /10.248.50.224:12002
+2022-05-27 17:38:12.484 [lettuce-nioEventLoop-6-6] WARN  io.lettuce.core.protocol.ConnectionWatchdog:  Cannot reconnect to [/10.248.50.224:12002]: connection timed out: /10.248.50.224:12002
+2022-05-27 17:38:12.560 [lettuce-eventExecutorLoop-1-4] INFO  io.lettuce.core.protocol.ConnectionWatchdog:  Reconnecting, last destination was /10.248.50.224:12002
+2022-05-27 17:38:22.565 [lettuce-nioEventLoop-6-7] WARN  io.lettuce.core.RedisClient:  Cannot connect Redis Sentinel at redis://10.248.50.223:13001: java.util.concurrent.CompletionException: io.netty.channel.ConnectTimeoutException: connection timed out: /10.248.50.223:13001
+2022-05-27 17:38:32.575 [lettuce-nioEventLoop-6-8] WARN  io.lettuce.core.RedisClient:  Cannot connect Redis Sentinel at redis://10.248.50.224:13002: java.util.concurrent.CompletionException: io.netty.channel.ConnectTimeoutException: connection timed out: /10.248.50.224:13002
+2022-05-27 17:38:32.576 [lettuce-nioEventLoop-6-8] WARN  io.lettuce.core.protocol.ConnectionWatchdog:  Cannot retrieve current address from socketAddressSupplier: io.lettuce.core.RedisConnectionException: Cannot connect to a Redis Sentinel: [redis://10.248.50.223:13001, redis://10.248.50.224:13002], reusing cached address /10.248.50.224:12002
+2022-05-27 17:38:42.581 [lettuce-nioEventLoop-6-1] WARN  io.lettuce.core.protocol.ConnectionWatchdog:  Cannot reconnect to [/10.248.50.224:12002]: connection timed out: /10.248.50.224:12002
+2022-05-27 17:38:42.665 [lettuce-eventExecutorLoop-1-8] INFO  io.lettuce.core.protocol.ConnectionWatchdog:  Reconnecting, last destination was /10.248.50.224:12002
+2022-05-27 17:38:52.674 [lettuce-nioEventLoop-6-2] WARN  io.lettuce.core.RedisClient:  Cannot connect Redis Sentinel at redis://10.248.50.223:13001: java.util.concurrent.CompletionException: io.netty.channel.ConnectTimeoutException: connection timed out: /10.248.50.223:13001
+2022-05-27 17:39:02.692 [lettuce-nioEventLoop-6-3] WARN  io.lettuce.core.RedisClient:  Cannot connect Redis Sentinel at redis://10.248.50.224:13002: java.util.concurrent.CompletionException: io.netty.channel.ConnectTimeoutException: connection timed out: /10.248.50.224:13002
+2022-05-27 17:39:02.693 [lettuce-nioEventLoop-6-3] WARN  io.lettuce.core.protocol.ConnectionWatchdog:  Cannot retrieve current address from socketAddressSupplier: io.lettuce.core.RedisConnectionException: Cannot connect to a Redis Sentinel: [redis://10.248.50.223:13001, redis://10.248.50.224:13002], reusing cached address /10.248.50.224:12002
+2022-05-27 17:39:12.700 [lettuce-nioEventLoop-6-4] WARN  io.lettuce.core.protocol.ConnectionWatchdog:  Cannot reconnect to [/10.248.50.224:12002]: connection timed out: /10.248.50.224:12002
+2022-05-27 17:39:12.865 [lettuce-eventExecutorLoop-1-4] INFO  io.lettuce.core.protocol.ConnectionWatchdog:  Reconnecting, last destination was /10.248.50.224:12002
+2022-05-27 17:39:22.872 [lettuce-nioEventLoop-6-5] WARN  io.lettuce.core.RedisClient:  Cannot connect Redis Sentinel at redis://10.248.50.223:13001: java.util.concurrent.CompletionException: io.netty.channel.ConnectTimeoutException: connection timed out: /10.248.50.223:13001
+2022-05-27 17:39:32.876 [lettuce-nioEventLoop-6-6] WARN  io.lettuce.core.RedisClient:  Cannot connect Redis Sentinel at redis://10.248.50.224:13002: java.util.concurrent.CompletionException: io.netty.channel.ConnectTimeoutException: connection timed out: /10.248.50.224:13002
+2022-05-27 17:39:32.877 [lettuce-nioEventLoop-6-6] WARN  io.lettuce.core.protocol.ConnectionWatchdog:  Cannot retrieve current address from socketAddressSupplier: io.lettuce.core.RedisConnectionException: Cannot connect to a Redis Sentinel: [redis://10.248.50.223:13001, redis://10.248.50.224:13002], reusing cached address /10.248.50.224:12002
+2022-05-27 17:39:42.881 [lettuce-nioEventLoop-6-7] WARN  io.lettuce.core.protocol.ConnectionWatchdog:  Cannot reconnect to [/10.248.50.224:12002]: connection timed out: /10.248.50.224:12002
+2022-05-27 17:39:43.064 [lettuce-eventExecutorLoop-1-8] INFO  io.lettuce.core.protocol.ConnectionWatchdog:  Reconnecting, last destination was /10.248.50.224:12002
+2022-05-27 17:39:53.071 [lettuce-nioEventLoop-6-8] WARN  io.lettuce.core.RedisClient:  Cannot connect Redis Sentinel at redis://10.248.50.223:13001: java.util.concurrent.CompletionException: io.netty.channel.ConnectTimeoutException: connection timed out: /10.248.50.223:13001
+2022-05-27 17:40:03.078 [lettuce-nioEventLoop-6-1] WARN  io.lettuce.core.RedisClient:  Cannot connect Redis Sentinel at redis://10.248.50.224:13002: java.util.concurrent.CompletionException: io.netty.channel.ConnectTimeoutException: connection timed out: /10.248.50.224:13002
+2022-05-27 17:40:03.079 [lettuce-nioEventLoop-6-1] WARN  io.lettuce.core.protocol.ConnectionWatchdog:  Cannot retrieve current address from socketAddressSupplier: io.lettuce.core.RedisConnectionException: Cannot connect to a Redis Sentinel: [redis://10.248.50.223:13001, redis://10.248.50.224:13002], reusing cached address /10.248.50.224:12002
+2022-05-27 17:40:04.950 [SpringApplicationShutdownHook] WARN  io.lettuce.core.protocol.ConnectionWatchdog:  Cannot reconnect to [/10.248.50.224:12002]: java.util.concurrent.CancellationException

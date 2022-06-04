@@ -1,7 +1,8 @@
 package com.example.springdemo.service.impl;
 
 import com.alibaba.fastjson.JSON;
-import com.example.springdemo.dao.Province;
+import com.alibaba.fastjson.JSONObject;
+import com.example.springdemo.dao.User;
 import com.example.springdemo.utils.BaseResult;
 import com.example.springdemo.utils.RedisUtil;
 import com.example.springdemo.utils.StringUtils;
@@ -11,8 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
+import reactor.core.Fuseable;
 
-import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 
@@ -85,15 +86,14 @@ public class RedisService {
         return result;
     }
 
-    public BaseResult setJsonString(String key, ArrayList<Object> value, String time) {
+    public BaseResult setJsonString(String key, String value, String time) {
         BaseResult result = new BaseResult();
         try {
-            String jsonVal = JSON.toJSONString(value);
             if (StringUtils.isNotBlank(time)) {
                 long t = Long.parseLong(time);
-                redisUtil.setForTimeMS(key, jsonVal, t);
+                redisUtil.setForTimeMS(key, value, t);
             } else {
-                redisUtil.set(key, jsonVal);
+                redisUtil.set(key,  value);
             }
             result.setSuccess("数据更新成功");
         } catch (Exception e) {
@@ -102,5 +102,17 @@ public class RedisService {
         return result;
     }
 
+    public BaseResult getJsonString(String key) {
+        BaseResult result = new BaseResult();
+        try {
+            String value = stringRedisTemplateSentinel.opsForValue().get(key);
+            log.info("getJsonString value 结果=>{}", value);
+            String parse = (String) JSON.parse(value);
+            result.setSuccess(JSONObject.parseObject(parse, User.class));
+        } catch (Exception e) {
+            result.setError(e.getMessage());
+        }
+        return result;
+    }
 
 }

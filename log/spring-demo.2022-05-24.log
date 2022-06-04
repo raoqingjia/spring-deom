@@ -1,0 +1,422 @@
+2022-05-24 06:20:59.828 [cluster-ClusterId{value='628b4df5cf48b304963a42df', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Exception in monitor thread while connecting to server 10.248.50.224:27017
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:701)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:579)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415)
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:374)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:216)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:718)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:576)
+	... 5 common frames omitted
+2022-05-24 08:30:07.521 [cluster-ClusterId{value='628b4df5cf48b304963a42df', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Exception in monitor thread while connecting to server 10.248.50.224:27017
+com.mongodb.MongoSocketReadException: Exception receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:707)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:579)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:342)
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:96)
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:44)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:718)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:576)
+	... 10 common frames omitted
+2022-05-24 10:00:07.344 [cluster-ClusterId{value='628b4df5cf48b304963a42df', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Exception in monitor thread while connecting to server 10.248.50.224:27017
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:701)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:579)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:342)
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:96)
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:44)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:718)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:576)
+	... 10 common frames omitted
+2022-05-24 10:02:37.283 [cluster-rtt-ClusterId{value='628b4df5cf48b304963a42df', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:20, serverValue:3873}] to 10.248.50.224:27017
+2022-05-24 10:02:37.460 [cluster-ClusterId{value='628b4df5cf48b304963a42df', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:21, serverValue:3874}] to 10.248.50.224:27017
+2022-05-24 10:02:37.463 [cluster-ClusterId{value='628b4df5cf48b304963a42df', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Monitor thread successfully connected to server with description ServerDescription{address=10.248.50.224:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=54780345}
+2022-05-24 10:56:24.936 [main] INFO  com.example.springdemo.SpringDemoApplication:  Starting SpringDemoApplication using Java 1.8.0_131 on localhost with PID 3923 (/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes started by raoqingjia in /Users/raoqingjia/WebstormProjects/project_private/spring-demo)
+2022-05-24 10:56:24.939 [main] INFO  com.example.springdemo.SpringDemoApplication:  No active profile set, falling back to 1 default profile: "default"
+2022-05-24 10:56:25.682 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-05-24 10:56:25.683 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-05-24 10:56:25.695 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 7 ms. Found 0 MongoDB repository interfaces.
+2022-05-24 10:56:25.712 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-05-24 10:56:25.714 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-05-24 10:56:25.726 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2022-05-24 10:56:26.126 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat initialized with port(s): 8081 (http)
+2022-05-24 10:56:26.134 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Initializing ProtocolHandler ["http-nio-8081"]
+2022-05-24 10:56:26.135 [main] INFO  org.apache.catalina.core.StandardService:  Starting service [Tomcat]
+2022-05-24 10:56:26.135 [main] INFO  org.apache.catalina.core.StandardEngine:  Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-05-24 10:56:26.196 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring embedded WebApplicationContext
+2022-05-24 10:56:26.196 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:  Root WebApplicationContext: initialization completed in 1220 ms
+2022-05-24 10:56:26.324 [main] INFO  org.mongodb.driver.cluster:  Cluster created with settings {hosts=[10.248.50.224:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-05-24 10:56:26.473 [cluster-ClusterId{value='628c495a913c9f2797a47a85', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:1, serverValue:3878}] to 10.248.50.224:27017
+2022-05-24 10:56:26.473 [cluster-rtt-ClusterId{value='628c495a913c9f2797a47a85', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:2, serverValue:3879}] to 10.248.50.224:27017
+2022-05-24 10:56:26.473 [cluster-ClusterId{value='628c495a913c9f2797a47a85', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Monitor thread successfully connected to server with description ServerDescription{address=10.248.50.224:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=104112510}
+2022-05-24 10:56:26.667 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  sentinel master: [crm]
+2022-05-24 10:56:26.668 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.223:13001
+2022-05-24 10:56:26.669 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.224:13002
+2022-05-24 10:56:26.672 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  LettuceConnectionFactorySentinel bean created
+2022-05-24 10:56:26.880 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  StringRedisTemplateSentinel bean created
+2022-05-24 10:56:27.231 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Starting ProtocolHandler ["http-nio-8081"]
+2022-05-24 10:56:27.245 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:  Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8081 is already in use
+2022-05-24 10:56:27.374 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Pausing ProtocolHandler ["http-nio-8081"]
+2022-05-24 10:56:27.374 [main] INFO  org.apache.catalina.core.StandardService:  Stopping service [Tomcat]
+2022-05-24 10:56:27.379 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Stopping ProtocolHandler ["http-nio-8081"]
+2022-05-24 10:56:27.379 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Destroying ProtocolHandler ["http-nio-8081"]
+2022-05-24 10:56:27.386 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener:  
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-05-24 10:56:27.403 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter:  
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8081 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
+
+2022-05-24 10:58:04.485 [main] INFO  com.example.springdemo.SpringDemoApplication:  Starting SpringDemoApplication using Java 1.8.0_131 on localhost with PID 3935 (/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes started by raoqingjia in /Users/raoqingjia/WebstormProjects/project_private/spring-demo)
+2022-05-24 10:58:04.488 [main] INFO  com.example.springdemo.SpringDemoApplication:  No active profile set, falling back to 1 default profile: "default"
+2022-05-24 10:58:05.005 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-05-24 10:58:05.006 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-05-24 10:58:05.020 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 11 ms. Found 0 MongoDB repository interfaces.
+2022-05-24 10:58:05.029 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-05-24 10:58:05.029 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-05-24 10:58:05.038 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2022-05-24 10:58:05.396 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat initialized with port(s): 8081 (http)
+2022-05-24 10:58:05.403 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Initializing ProtocolHandler ["http-nio-8081"]
+2022-05-24 10:58:05.404 [main] INFO  org.apache.catalina.core.StandardService:  Starting service [Tomcat]
+2022-05-24 10:58:05.404 [main] INFO  org.apache.catalina.core.StandardEngine:  Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-05-24 10:58:05.472 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring embedded WebApplicationContext
+2022-05-24 10:58:05.472 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:  Root WebApplicationContext: initialization completed in 948 ms
+2022-05-24 10:58:05.563 [main] INFO  org.mongodb.driver.cluster:  Cluster created with settings {hosts=[10.248.50.224:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-05-24 10:58:05.665 [cluster-ClusterId{value='628c49bd602d353229fbfae5', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:1, serverValue:3880}] to 10.248.50.224:27017
+2022-05-24 10:58:05.665 [cluster-rtt-ClusterId{value='628c49bd602d353229fbfae5', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:2, serverValue:3881}] to 10.248.50.224:27017
+2022-05-24 10:58:05.665 [cluster-ClusterId{value='628c49bd602d353229fbfae5', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Monitor thread successfully connected to server with description ServerDescription{address=10.248.50.224:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=75105511}
+2022-05-24 10:58:05.821 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  sentinel master: [crm]
+2022-05-24 10:58:05.822 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.223:13001
+2022-05-24 10:58:05.823 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.224:13002
+2022-05-24 10:58:05.825 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  LettuceConnectionFactorySentinel bean created
+2022-05-24 10:58:05.972 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  StringRedisTemplateSentinel bean created
+2022-05-24 10:58:06.265 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Starting ProtocolHandler ["http-nio-8081"]
+2022-05-24 10:58:06.278 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:  Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8081 is already in use
+2022-05-24 10:58:06.397 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Pausing ProtocolHandler ["http-nio-8081"]
+2022-05-24 10:58:06.397 [main] INFO  org.apache.catalina.core.StandardService:  Stopping service [Tomcat]
+2022-05-24 10:58:06.401 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Stopping ProtocolHandler ["http-nio-8081"]
+2022-05-24 10:58:06.401 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Destroying ProtocolHandler ["http-nio-8081"]
+2022-05-24 10:58:06.408 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener:  
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-05-24 10:58:06.431 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter:  
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8081 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
+
+2022-05-24 10:58:34.000 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-24 10:58:34.001 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:  Initializing Servlet 'dispatcherServlet'
+2022-05-24 10:58:34.032 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:  Completed initialization in 31 ms
+2022-05-24 10:58:34.096 [http-nio-8081-exec-1] INFO  com.example.springdemo.controller.RedisController:  /redis/getJsonString 入参 key=>bboss.redis.JsonString
+2022-05-24 10:58:34.738 [http-nio-8081-exec-1] INFO  com.example.springdemo.controller.RedisController:  /redis/getJsonString 结果=>{"bizCode":"000000","bizDesc":"SUCCESS"}
+2022-05-24 11:01:59.084 [http-nio-8081-exec-6] INFO  com.example.springdemo.controller.RedisController:  /redis/setJsonString 入参 params=>{"value":[{"age":12,"name":"tom"},{"age":13,"name":"jim"}],"key":"bboss.redis.JsonString"}
+2022-05-24 11:01:59.090 [http-nio-8081-exec-6] INFO  com.example.springdemo.controller.RedisController:  /redis/setJsonString 入参 key=>bboss.redis.JsonString
+2022-05-24 11:01:59.090 [http-nio-8081-exec-6] INFO  com.example.springdemo.controller.RedisController:  /redis/setJsonString 入参 value=>[{age=12, name=tom}, {age=13, name=jim}]
+2022-05-24 11:01:59.090 [http-nio-8081-exec-6] INFO  com.example.springdemo.controller.RedisController:  /redis/setJsonString 入参 time=>null
+2022-05-24 11:01:59.109 [http-nio-8081-exec-6] INFO  com.example.springdemo.controller.RedisController:  /redis/setJsonString 结果=>null
+2022-05-24 11:04:25.352 [cluster-ClusterId{value='628b4df5cf48b304963a42df', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Exception in monitor thread while connecting to server 10.248.50.224:27017
+com.mongodb.MongoSocketReadException: Prematurely reached end of stream
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:112)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:718)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:576)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415)
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:374)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:216)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
+	at java.lang.Thread.run(Thread.java:748)
+2022-05-24 11:04:25.444 [lettuce-eventExecutorLoop-1-1] INFO  io.lettuce.core.protocol.ConnectionWatchdog:  Reconnecting, last destination was /10.248.50.224:12002
+2022-05-24 11:04:35.360 [cluster-ClusterId{value='628b4df5cf48b304963a42df', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Exception in monitor thread while connecting to server 10.248.50.224:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:180)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:107)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65)
+	... 4 common frames omitted
+2022-05-24 11:04:35.457 [lettuce-nioEventLoop-6-3] WARN  io.lettuce.core.RedisClient:  Cannot connect Redis Sentinel at redis://10.248.50.223:13001: java.util.concurrent.CompletionException: io.netty.channel.ConnectTimeoutException: connection timed out: /10.248.50.223:13001
+2022-05-24 11:04:40.223 [SpringApplicationShutdownHook] WARN  io.lettuce.core.protocol.ConnectionWatchdog:  Cannot reconnect to [/10.248.50.224:12002]: java.util.concurrent.CancellationException
+2022-05-24 11:04:40.229 [lettuce-nioEventLoop-6-4] WARN  io.lettuce.core.RedisClient:  Cannot connect Redis Sentinel at redis://10.248.50.224:13002: java.util.concurrent.CompletionException: java.nio.channels.ClosedChannelException
+2022-05-24 11:04:40.230 [lettuce-nioEventLoop-6-4] WARN  io.lettuce.core.protocol.ConnectionWatchdog:  Cannot retrieve current address from socketAddressSupplier: io.lettuce.core.RedisConnectionException: Cannot connect to a Redis Sentinel: [redis://10.248.50.223:13001, redis://10.248.50.224:13002], reusing cached address /10.248.50.224:12002
+2022-05-24 11:16:03.716 [main] INFO  com.example.springdemo.SpringDemoApplication:  Starting SpringDemoApplication using Java 1.8.0_131 on localhost with PID 1175 (/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes started by raoqingjia in /Users/raoqingjia/WebstormProjects/project_private/spring-demo)
+2022-05-24 11:16:03.719 [main] INFO  com.example.springdemo.SpringDemoApplication:  No active profile set, falling back to 1 default profile: "default"
+2022-05-24 11:16:04.408 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-05-24 11:16:04.408 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-05-24 11:16:04.419 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 5 ms. Found 0 MongoDB repository interfaces.
+2022-05-24 11:16:04.430 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-05-24 11:16:04.435 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-05-24 11:16:04.450 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+2022-05-24 11:16:04.798 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat initialized with port(s): 8081 (http)
+2022-05-24 11:16:04.805 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Initializing ProtocolHandler ["http-nio-8081"]
+2022-05-24 11:16:04.806 [main] INFO  org.apache.catalina.core.StandardService:  Starting service [Tomcat]
+2022-05-24 11:16:04.806 [main] INFO  org.apache.catalina.core.StandardEngine:  Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-05-24 11:16:04.867 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring embedded WebApplicationContext
+2022-05-24 11:16:04.867 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:  Root WebApplicationContext: initialization completed in 1112 ms
+2022-05-24 11:16:04.977 [main] INFO  org.mongodb.driver.cluster:  Cluster created with settings {hosts=[10.248.50.224:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-05-24 11:16:05.274 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  sentinel master: [crm]
+2022-05-24 11:16:05.275 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.223:13001
+2022-05-24 11:16:05.275 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.224:13002
+2022-05-24 11:16:05.277 [cluster-rtt-ClusterId{value='628c4df42df0cd1a068205e0', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:2, serverValue:3882}] to 10.248.50.224:27017
+2022-05-24 11:16:05.278 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  LettuceConnectionFactorySentinel bean created
+2022-05-24 11:16:05.281 [cluster-ClusterId{value='628c4df42df0cd1a068205e0', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:1, serverValue:3883}] to 10.248.50.224:27017
+2022-05-24 11:16:05.281 [cluster-ClusterId{value='628c4df42df0cd1a068205e0', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Monitor thread successfully connected to server with description ServerDescription{address=10.248.50.224:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=271110856}
+2022-05-24 11:16:05.444 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  StringRedisTemplateSentinel bean created
+2022-05-24 11:16:05.778 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Starting ProtocolHandler ["http-nio-8081"]
+2022-05-24 11:16:05.803 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat started on port(s): 8081 (http) with context path ''
+2022-05-24 11:16:05.812 [main] INFO  com.example.springdemo.SpringDemoApplication:  Started SpringDemoApplication in 2.608 seconds (JVM running for 3.263)
+2022-05-24 11:16:10.541 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-24 11:16:10.541 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:  Initializing Servlet 'dispatcherServlet'
+2022-05-24 11:16:10.542 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:  Completed initialization in 1 ms
+2022-05-24 11:16:10.642 [http-nio-8081-exec-1] INFO  com.example.springdemo.controller.RedisController:  /redis/setJsonString 入参 params=>{"value":[{"age":12,"name":"tom"},{"age":13,"name":"jim"}],"key":"bboss.redis.JsonString"}
+2022-05-24 11:16:10.668 [http-nio-8081-exec-1] INFO  com.example.springdemo.controller.RedisController:  /redis/setJsonString 入参 key=>bboss.redis.JsonString
+2022-05-24 11:16:10.668 [http-nio-8081-exec-1] INFO  com.example.springdemo.controller.RedisController:  /redis/setJsonString 入参 value=>[{age=12, name=tom}, {age=13, name=jim}]
+2022-05-24 11:16:10.668 [http-nio-8081-exec-1] INFO  com.example.springdemo.controller.RedisController:  /redis/setJsonString 入参 time=>null
+2022-05-24 11:16:11.363 [http-nio-8081-exec-1] INFO  com.example.springdemo.controller.RedisController:  /redis/setJsonString 结果=>null
+2022-05-24 11:16:43.051 [http-nio-8081-exec-3] INFO  com.example.springdemo.controller.RedisController:  /redis/getJsonString 入参 key=>bboss.redis.JsonString
+2022-05-24 11:16:43.112 [http-nio-8081-exec-3] INFO  com.example.springdemo.controller.RedisController:  /redis/getJsonString 结果=>{"bizCode":"000000","bizData":"[{age=12, name=tom}, {age=13, name=jim}]","bizDesc":"SUCCESS"}
+2022-05-24 11:17:01.494 [http-nio-8081-exec-7] INFO  com.example.springdemo.controller.RedisController:  /redis/setJsonString 入参 params=>{"value":[{"age":12,"name":"tom"},{"age":13,"name":"jim"}],"key":"bboss.redis.JsonString"}
+2022-05-24 11:17:01.494 [http-nio-8081-exec-7] INFO  com.example.springdemo.controller.RedisController:  /redis/setJsonString 入参 key=>bboss.redis.JsonString
+2022-05-24 11:17:01.495 [http-nio-8081-exec-7] INFO  com.example.springdemo.controller.RedisController:  /redis/setJsonString 入参 value=>[{age=12, name=tom}, {age=13, name=jim}]
+2022-05-24 11:17:01.495 [http-nio-8081-exec-7] INFO  com.example.springdemo.controller.RedisController:  /redis/setJsonString 入参 time=>null
+2022-05-24 11:17:01.504 [http-nio-8081-exec-7] INFO  com.example.springdemo.controller.RedisController:  /redis/setJsonString 结果=>null
+2022-05-24 11:18:37.524 [main] INFO  com.example.springdemo.SpringDemoApplication:  Starting SpringDemoApplication using Java 1.8.0_131 on localhost with PID 1249 (/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes started by raoqingjia in /Users/raoqingjia/WebstormProjects/project_private/spring-demo)
+2022-05-24 11:18:37.545 [main] INFO  com.example.springdemo.SpringDemoApplication:  No active profile set, falling back to 1 default profile: "default"
+2022-05-24 11:18:38.182 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-05-24 11:18:38.183 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-05-24 11:18:38.194 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 6 ms. Found 0 MongoDB repository interfaces.
+2022-05-24 11:18:38.215 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-05-24 11:18:38.216 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-05-24 11:18:38.227 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2022-05-24 11:18:38.545 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat initialized with port(s): 8081 (http)
+2022-05-24 11:18:38.550 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Initializing ProtocolHandler ["http-nio-8081"]
+2022-05-24 11:18:38.551 [main] INFO  org.apache.catalina.core.StandardService:  Starting service [Tomcat]
+2022-05-24 11:18:38.551 [main] INFO  org.apache.catalina.core.StandardEngine:  Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-05-24 11:18:38.603 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring embedded WebApplicationContext
+2022-05-24 11:18:38.604 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:  Root WebApplicationContext: initialization completed in 1005 ms
+2022-05-24 11:18:38.688 [main] INFO  org.mongodb.driver.cluster:  Cluster created with settings {hosts=[10.248.50.224:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-05-24 11:18:38.801 [cluster-rtt-ClusterId{value='628c4e8e4a43c9146448d297', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:2, serverValue:3884}] to 10.248.50.224:27017
+2022-05-24 11:18:38.801 [cluster-ClusterId{value='628c4e8e4a43c9146448d297', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:1, serverValue:3885}] to 10.248.50.224:27017
+2022-05-24 11:18:38.802 [cluster-ClusterId{value='628c4e8e4a43c9146448d297', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Monitor thread successfully connected to server with description ServerDescription{address=10.248.50.224:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=84734432}
+2022-05-24 11:18:38.912 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  sentinel master: [crm]
+2022-05-24 11:18:38.913 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.223:13001
+2022-05-24 11:18:38.913 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.224:13002
+2022-05-24 11:18:38.915 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  LettuceConnectionFactorySentinel bean created
+2022-05-24 11:18:39.042 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  StringRedisTemplateSentinel bean created
+2022-05-24 11:18:39.326 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Starting ProtocolHandler ["http-nio-8081"]
+2022-05-24 11:18:39.348 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat started on port(s): 8081 (http) with context path ''
+2022-05-24 11:18:39.356 [main] INFO  com.example.springdemo.SpringDemoApplication:  Started SpringDemoApplication in 2.404 seconds (JVM running for 2.907)
+2022-05-24 11:19:40.761 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-24 11:19:40.762 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:  Initializing Servlet 'dispatcherServlet'
+2022-05-24 11:19:40.762 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:  Completed initialization in 0 ms
+2022-05-24 11:19:40.835 [http-nio-8081-exec-1] INFO  com.example.springdemo.controller.RedisController:  /redis/setJsonString 入参 params=>{"value":[{"age":12,"name":"tom"},{"age":13,"name":"jim"}],"key":"bboss.redis.JsonString"}
+2022-05-24 11:19:40.858 [http-nio-8081-exec-1] INFO  com.example.springdemo.controller.RedisController:  /redis/setJsonString 入参 key=>bboss.redis.JsonString
+2022-05-24 11:19:40.858 [http-nio-8081-exec-1] INFO  com.example.springdemo.controller.RedisController:  /redis/setJsonString 入参 value=>[{age=12, name=tom}, {age=13, name=jim}]
+2022-05-24 11:19:40.858 [http-nio-8081-exec-1] INFO  com.example.springdemo.controller.RedisController:  /redis/setJsonString 入参 time=>null
+2022-05-24 11:19:41.234 [http-nio-8081-exec-1] INFO  com.example.springdemo.controller.RedisController:  /redis/setJsonString 结果=>null
+2022-05-24 11:20:05.169 [http-nio-8081-exec-3] INFO  com.example.springdemo.controller.RedisController:  /redis/getJsonString 入参 key=>bboss.redis.JsonString
+2022-05-24 11:20:05.222 [http-nio-8081-exec-3] INFO  com.example.springdemo.controller.RedisController:  /redis/getJsonString 结果=>{"bizCode":"000000","bizData":"[{age=12, name=tom}, {age=13, name=jim}]","bizDesc":"SUCCESS"}
+2022-05-24 11:26:45.967 [main] INFO  com.example.springdemo.SpringDemoApplication:  Starting SpringDemoApplication using Java 1.8.0_131 on localhost with PID 1350 (/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes started by raoqingjia in /Users/raoqingjia/WebstormProjects/project_private/spring-demo)
+2022-05-24 11:26:45.970 [main] INFO  com.example.springdemo.SpringDemoApplication:  No active profile set, falling back to 1 default profile: "default"
+2022-05-24 11:26:46.510 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-05-24 11:26:46.511 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-05-24 11:26:46.520 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 6 ms. Found 0 MongoDB repository interfaces.
+2022-05-24 11:26:46.534 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-05-24 11:26:46.536 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-05-24 11:26:46.544 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+2022-05-24 11:26:46.856 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat initialized with port(s): 8081 (http)
+2022-05-24 11:26:46.863 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Initializing ProtocolHandler ["http-nio-8081"]
+2022-05-24 11:26:46.863 [main] INFO  org.apache.catalina.core.StandardService:  Starting service [Tomcat]
+2022-05-24 11:26:46.863 [main] INFO  org.apache.catalina.core.StandardEngine:  Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-05-24 11:26:46.918 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring embedded WebApplicationContext
+2022-05-24 11:26:46.918 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:  Root WebApplicationContext: initialization completed in 913 ms
+2022-05-24 11:26:47.001 [main] INFO  org.mongodb.driver.cluster:  Cluster created with settings {hosts=[10.248.50.224:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-05-24 11:26:47.089 [cluster-ClusterId{value='628c5076535ef9215ae988ab', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:1, serverValue:3887}] to 10.248.50.224:27017
+2022-05-24 11:26:47.089 [cluster-rtt-ClusterId{value='628c5076535ef9215ae988ab', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:2, serverValue:3886}] to 10.248.50.224:27017
+2022-05-24 11:26:47.089 [cluster-ClusterId{value='628c5076535ef9215ae988ab', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Monitor thread successfully connected to server with description ServerDescription{address=10.248.50.224:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=62803439}
+2022-05-24 11:26:47.261 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  sentinel master: [crm]
+2022-05-24 11:26:47.262 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.223:13001
+2022-05-24 11:26:47.262 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.224:13002
+2022-05-24 11:26:47.265 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  LettuceConnectionFactorySentinel bean created
+2022-05-24 11:26:47.397 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  StringRedisTemplateSentinel bean created
+2022-05-24 11:26:47.664 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Starting ProtocolHandler ["http-nio-8081"]
+2022-05-24 11:26:47.686 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat started on port(s): 8081 (http) with context path ''
+2022-05-24 11:26:47.694 [main] INFO  com.example.springdemo.SpringDemoApplication:  Started SpringDemoApplication in 2.121 seconds (JVM running for 2.568)
+2022-05-24 11:26:51.776 [http-nio-8081-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-24 11:26:51.776 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet:  Initializing Servlet 'dispatcherServlet'
+2022-05-24 11:26:51.777 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet:  Completed initialization in 1 ms
+2022-05-24 11:26:51.810 [http-nio-8081-exec-2] INFO  com.example.springdemo.controller.RedisController:  /redis/getJsonString 入参 key=>bboss.redis.JsonString
+2022-05-24 11:26:52.233 [http-nio-8081-exec-2] INFO  com.example.springdemo.controller.RedisController:  /redis/getJsonString 结果=>{"bizCode":"000500","bizData":"can not cast to JSONObject.","bizDesc":"ERROR"}
+2022-05-24 11:29:12.263 [main] INFO  com.example.springdemo.SpringDemoApplication:  Starting SpringDemoApplication using Java 1.8.0_131 on localhost with PID 1377 (/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes started by raoqingjia in /Users/raoqingjia/WebstormProjects/project_private/spring-demo)
+2022-05-24 11:29:12.265 [main] INFO  com.example.springdemo.SpringDemoApplication:  No active profile set, falling back to 1 default profile: "default"
+2022-05-24 11:29:12.786 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-05-24 11:29:12.787 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-05-24 11:29:12.796 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 5 ms. Found 0 MongoDB repository interfaces.
+2022-05-24 11:29:12.805 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-05-24 11:29:12.806 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-05-24 11:29:12.815 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2022-05-24 11:29:13.113 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat initialized with port(s): 8081 (http)
+2022-05-24 11:29:13.119 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Initializing ProtocolHandler ["http-nio-8081"]
+2022-05-24 11:29:13.119 [main] INFO  org.apache.catalina.core.StandardService:  Starting service [Tomcat]
+2022-05-24 11:29:13.119 [main] INFO  org.apache.catalina.core.StandardEngine:  Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-05-24 11:29:13.164 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring embedded WebApplicationContext
+2022-05-24 11:29:13.164 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:  Root WebApplicationContext: initialization completed in 865 ms
+2022-05-24 11:29:13.261 [main] INFO  org.mongodb.driver.cluster:  Cluster created with settings {hosts=[10.248.50.224:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-05-24 11:29:13.477 [cluster-ClusterId{value='628c51093d950a339b84b761', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:1, serverValue:3888}] to 10.248.50.224:27017
+2022-05-24 11:29:13.477 [cluster-rtt-ClusterId{value='628c51093d950a339b84b761', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:2, serverValue:3889}] to 10.248.50.224:27017
+2022-05-24 11:29:13.478 [cluster-ClusterId{value='628c51093d950a339b84b761', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Monitor thread successfully connected to server with description ServerDescription{address=10.248.50.224:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=191120383}
+2022-05-24 11:29:13.488 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  sentinel master: [crm]
+2022-05-24 11:29:13.489 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.223:13001
+2022-05-24 11:29:13.490 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.224:13002
+2022-05-24 11:29:13.492 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  LettuceConnectionFactorySentinel bean created
+2022-05-24 11:29:13.619 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  StringRedisTemplateSentinel bean created
+2022-05-24 11:29:13.886 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Starting ProtocolHandler ["http-nio-8081"]
+2022-05-24 11:29:13.908 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat started on port(s): 8081 (http) with context path ''
+2022-05-24 11:29:13.916 [main] INFO  com.example.springdemo.SpringDemoApplication:  Started SpringDemoApplication in 2.025 seconds (JVM running for 2.546)
+2022-05-24 11:29:45.388 [http-nio-8081-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-24 11:29:45.388 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet:  Initializing Servlet 'dispatcherServlet'
+2022-05-24 11:29:45.390 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet:  Completed initialization in 2 ms
+2022-05-24 11:29:45.425 [http-nio-8081-exec-2] INFO  com.example.springdemo.controller.RedisController:  /redis/getJsonString 入参 key=>bboss.redis.JsonString
+2022-05-24 11:29:45.837 [http-nio-8081-exec-2] INFO  com.example.springdemo.controller.RedisController:  /redis/getJsonString 结果=>{"bizCode":"000500","bizData":"can not cast to JSONObject.","bizDesc":"ERROR"}
+2022-05-24 11:30:14.150 [http-nio-8081-exec-3] INFO  com.example.springdemo.controller.RedisController:  /redis/setJsonString 入参 params=>{"value":[{"age":12,"name":"tom"},{"age":13,"name":"jim"}],"key":"bboss.redis.JsonString"}
+2022-05-24 11:30:14.171 [http-nio-8081-exec-3] INFO  com.example.springdemo.controller.RedisController:  /redis/setJsonString 结果=>null
+2022-05-24 11:30:16.458 [http-nio-8081-exec-4] INFO  com.example.springdemo.controller.RedisController:  /redis/getJsonString 入参 key=>bboss.redis.JsonString
+2022-05-24 11:30:16.468 [http-nio-8081-exec-4] INFO  com.example.springdemo.controller.RedisController:  /redis/getJsonString 结果=>{"bizCode":"000500","bizData":"can not cast to JSONObject.","bizDesc":"ERROR"}
+2022-05-24 11:33:37.556 [main] INFO  com.example.springdemo.SpringDemoApplication:  Starting SpringDemoApplication using Java 1.8.0_131 on localhost with PID 1466 (/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes started by raoqingjia in /Users/raoqingjia/WebstormProjects/project_private/spring-demo)
+2022-05-24 11:33:37.559 [main] INFO  com.example.springdemo.SpringDemoApplication:  No active profile set, falling back to 1 default profile: "default"
+2022-05-24 11:33:38.111 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-05-24 11:33:38.111 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-05-24 11:33:38.122 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 7 ms. Found 0 MongoDB repository interfaces.
+2022-05-24 11:33:38.132 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-05-24 11:33:38.133 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-05-24 11:33:38.145 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2022-05-24 11:33:38.462 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat initialized with port(s): 8081 (http)
+2022-05-24 11:33:38.469 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Initializing ProtocolHandler ["http-nio-8081"]
+2022-05-24 11:33:38.470 [main] INFO  org.apache.catalina.core.StandardService:  Starting service [Tomcat]
+2022-05-24 11:33:38.470 [main] INFO  org.apache.catalina.core.StandardEngine:  Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-05-24 11:33:38.519 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring embedded WebApplicationContext
+2022-05-24 11:33:38.519 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:  Root WebApplicationContext: initialization completed in 925 ms
+2022-05-24 11:33:38.617 [main] INFO  org.mongodb.driver.cluster:  Cluster created with settings {hosts=[10.248.50.224:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-05-24 11:33:38.701 [cluster-ClusterId{value='628c5212aadf9f5879459256', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:1, serverValue:3891}] to 10.248.50.224:27017
+2022-05-24 11:33:38.701 [cluster-rtt-ClusterId{value='628c5212aadf9f5879459256', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:2, serverValue:3890}] to 10.248.50.224:27017
+2022-05-24 11:33:38.702 [cluster-ClusterId{value='628c5212aadf9f5879459256', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Monitor thread successfully connected to server with description ServerDescription{address=10.248.50.224:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=60698674}
+2022-05-24 11:33:38.837 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  sentinel master: [crm]
+2022-05-24 11:33:38.838 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.223:13001
+2022-05-24 11:33:38.838 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.224:13002
+2022-05-24 11:33:38.840 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  LettuceConnectionFactorySentinel bean created
+2022-05-24 11:33:38.973 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  StringRedisTemplateSentinel bean created
+2022-05-24 11:33:39.251 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Starting ProtocolHandler ["http-nio-8081"]
+2022-05-24 11:33:39.274 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat started on port(s): 8081 (http) with context path ''
+2022-05-24 11:33:39.281 [main] INFO  com.example.springdemo.SpringDemoApplication:  Started SpringDemoApplication in 2.142 seconds (JVM running for 2.616)
+2022-05-24 11:34:21.081 [http-nio-8081-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-24 11:34:21.081 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet:  Initializing Servlet 'dispatcherServlet'
+2022-05-24 11:34:21.083 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet:  Completed initialization in 1 ms
+2022-05-24 11:34:21.155 [http-nio-8081-exec-2] INFO  com.example.springdemo.controller.RedisController:  /redis/setJsonString 入参 params=>{"value":[{"age":12,"name":"tom"},{"age":13,"name":"jim"}],"key":"bboss.redis.JsonString"}
+2022-05-24 11:34:21.624 [http-nio-8081-exec-2] INFO  com.example.springdemo.controller.RedisController:  /redis/setJsonString 结果=>null
+2022-05-24 11:35:20.609 [http-nio-8081-exec-3] INFO  com.example.springdemo.controller.RedisController:  /redis/getJsonString 入参 key=>bboss.redis.JsonString
+2022-05-24 11:35:20.634 [http-nio-8081-exec-3] INFO  com.example.springdemo.service.impl.RedisService:  getJsonString 结果=>"[{age=12, name=tom}, {age=13, name=jim}]"
+2022-05-24 11:35:20.650 [http-nio-8081-exec-3] INFO  com.example.springdemo.controller.RedisController:  /redis/getJsonString 结果=>{"bizCode":"000000","bizData":"\"[{age=12, name=tom}, {age=13, name=jim}]\"","bizDesc":"SUCCESS"}
+2022-05-24 13:59:39.794 [cluster-ClusterId{value='628c5212aadf9f5879459256', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Exception in monitor thread while connecting to server 10.248.50.224:27017
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:701)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:579)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415)
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:374)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:216)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:718)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:576)
+	... 5 common frames omitted
+2022-05-24 13:59:39.863 [cluster-ClusterId{value='628c5212aadf9f5879459256', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:3, serverValue:3892}] to 10.248.50.224:27017
+2022-05-24 13:59:39.864 [cluster-ClusterId{value='628c5212aadf9f5879459256', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Monitor thread successfully connected to server with description ServerDescription{address=10.248.50.224:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=65748708}
+2022-05-24 13:59:43.567 [cluster-rtt-ClusterId{value='628c5212aadf9f5879459256', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:4, serverValue:3893}] to 10.248.50.224:27017
+2022-05-24 20:48:37.517 [cluster-ClusterId{value='628c5212aadf9f5879459256', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Exception in monitor thread while connecting to server 10.248.50.224:27017
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:701)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:579)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415)
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:374)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:216)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:718)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:576)
+	... 5 common frames omitted

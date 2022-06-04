@@ -1,5 +1,6 @@
 package com.example.springdemo.controller;
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.example.springdemo.dao.Province;
 import com.example.springdemo.service.impl.RedisService;
 import com.example.springdemo.utils.BaseResult;
@@ -7,10 +8,8 @@ import com.example.springdemo.utils.RedisUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.support.HttpRequestHandlerServlet;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -64,12 +63,35 @@ public class RedisController {
     }
 
 
-    // http://localhost:8081/redis/setJsonString?key=bboss.redis.string.test
+//http://localhost:8081/redis/setJsonString
+//{
+//    "key":"bboss.redis.JsonString",
+//        "value": {
+//            "id":"101",
+//            "name":"JsonString",
+//            "data":"bboss.redis.JsonString",
+//            "address":"beijing",
+//            "gender": "man"
+//       },
+//      "time":""
+//   }
+//    https://www.codenong.com/cs106123676/
     @RequestMapping(path = "/setJsonString", method = RequestMethod.POST)
-    public BaseResult setJsonString(@RequestParam String key, @RequestParam  ArrayList<Object> value, String time){
-        logger.info("/redis/setJsonString 入参 key=>{}",key);
-        BaseResult result =  redisService.setJsonString(key,value,time);
+    public BaseResult setJsonString( @RequestBody String params){
+        logger.info("/redis/setJsonString 入参 params=>{}",params);
+        JSONObject jsonObject = JSONObject.parseObject(params);
+        logger.info("/redis/setJsonString 入参 jsonObject=>{}",jsonObject);
+        BaseResult result =  redisService.setJsonString(jsonObject.getString("key"),jsonObject.getString("value"),jsonObject.getString("time"));
         logger.info("/redis/setJsonString 结果=>{}", JSON.toJSONString(result));
+        return result;
+    }
+
+    // http://localhost:8081/redis/getJsonString?key=bboss.redis.JsonString
+    @RequestMapping(path = "/getJsonString", method = RequestMethod.GET)
+    public BaseResult getJsonString(@RequestParam String  key){
+        logger.info("/redis/getJsonString 入参 key=>{}",key);
+        BaseResult result =  redisService.getJsonString(key);
+        logger.info("/redis/getJsonString 结果=>{}", JSON.toJSONString(result));
         return result;
     }
 
