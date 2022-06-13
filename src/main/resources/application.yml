@@ -7,7 +7,7 @@ spring:
   data:
     mongodb:
       uri: mongodb://abs:1qaz!QAZ@10.248.50.224:27017/app
-  mysqlshparm:  //  阿里的druid就要将jdbcUrl改成url
+  mysqlshparm:  # 阿里的druid就要将jdbcUrl改成url
       driverClassName: com.mysql.jdbc.Driver
       jdbcUrl: jdbc:mysql://10.248.64.132:3307/abs_shparm?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
       username: root
