@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bboss.tools.dao.product.ChargeCodeMapper">
+
+    <select id="chargeCode" resultType="java.util.Map">
+        select charge_code,svc_opt_code,charge_code_js
+        from abs_product.pc_charge_code
+        where charge_code = #{chargeCodeJF}
+    </select>
+</mapper>

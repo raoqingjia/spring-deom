@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springdemo.dao.shaprm.LocationMapper">
+
+    <resultMap id="countryItem" type="com.example.springdemo.bo.CountryItem">
+        <id column="countryid" property="countryId" />
+        <result column="countryname" property="countryName" />
+        <result column="countrynumber" property="countryNumber" />
+        <result column="cityname" property="cityName" />
+        <result column="citynumber" property="cityNumber" />
+        <result column="create_time" property="createTime" />
+    </resultMap>
+
+
+    <select id="selectCountryList" resultMap="countryItem">
+        select countryid,
+               countryname,
+               countrynumber,
+               cityname,
+               citynumber,
+               create_time
+        from abs_shaprm.shaprm_country  order by countrynumber
+    </select>
+
+<!--    <insert id="batchInsertPatrolReport" useGeneratedKeys="false">-->
+
+<!--        insert into abs_tools.patrol_report (report_id, log_id, category_id, category_desc, item_id, item_desc,-->
+<!--                                             item_result,item_exc_sql,threshold_operator,threshold_value,item_status,-->
+<!--                                             error_desc, consuming_time, create_time)-->
+<!--        values-->
+<!--           <foreach collection="patrolReports" item="item" index="index" separator=",">-->
+<!--               (#{item.reportId},#{item.logId},#{item.categoryId},#{item.categoryDesc},#{item.itemId},-->
+<!--               #{item.itemDesc},#{item.itemResult},#{item.itemExcSql},#{item.thresholdOperator},#{item.thresholdValue},-->
+<!--               #{item.itemStatus},#{item.errorDesc},#{item.consumingTime}, now())-->
+<!--           </foreach>-->
+
+<!--    </insert>-->
+
+<!--    <select id="qryParamByItemId" resultMap="patrolParamMap">-->
+<!--        select param_id,-->
+<!--               item_id,-->
+<!--               param_name,-->
+<!--               param_sql,-->
+<!--               param_type,-->
+<!--               create_time,-->
+<!--               create_by-->
+<!--        from abs_tools.patrol_param where enabled_flag = 1 and item_id = #{itemId}-->
+<!--    </select>-->
+
+<!--    <select id="excuteParamSQL" resultType="string">-->
+<!--        ${paramSql}-->
+<!--    </select>-->
+
+<!--    <insert id="insertPatrolLog" parameterType="com.bboss.tools.bo.PatrolLog" useGeneratedKeys="false">-->
+<!--        insert into abs_tools.patrol_log (log_id, patrol_range, patrol_status, error_desc, mail_status,-->
+<!--                                          mail_recipient, mail_carboncopy, mail_content, start_time,-->
+<!--                                          end_time, create_time)-->
+<!--        values (#{logId}, #{patrolRange}, #{patrolStatus}, #{errorDesc}, #{mailStatus},-->
+<!--                #{mailRecipient}, #{mailCarboncopy}, #{mailContent}, #{startTime}, #{endTime},-->
+<!--                now())-->
+<!--    </insert>-->
+<!--    <update id="updPatrolLogByLogId" parameterType="com.bboss.tools.bo.PatrolLog" useGeneratedKeys="false">-->
+<!--        update abs_tools.patrol_log-->
+<!--            set patrol_status = #{patrolStatus}, error_desc = #{errorDesc}, mail_status = #{mailStatus},-->
+<!--                mail_recipient = #{mailRecipient}, mail_carboncopy = #{mailCarboncopy}, mail_content = #{mailContent},-->
+<!--                end_time = #{endTime}-->
+<!--        where log_id = #{logId}-->
+<!--    </update>-->
+
+
+</mapper>

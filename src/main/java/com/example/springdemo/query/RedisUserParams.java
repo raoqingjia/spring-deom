@@ -1,6 +1,6 @@
 package com.example.springdemo.query;
 
-import com.example.springdemo.dao.User;
+import com.example.springdemo.bean.User;
 import lombok.Getter;
 import lombok.Setter;
 

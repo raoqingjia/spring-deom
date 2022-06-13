@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bboss.tools.dao.tools.PubCustomersMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.bboss.tools.bo.PubCustomer">
+        <result column="CUSTOMER_ID" property="customerId" />
+        <result column="CUSTOMER_NAME" property="customerName" />
+        <result column="CUSTOMER_NUMBER" property="customerNumber" />
+        <result column="CUSTOMER_PROVINCE_NUMBER" property="customerProvinceNumber" />
+        <result column="CUST_TYPE" property="custType" />
+        <result column="CUSTOMER_SERV_LEVEL" property="customerServLevel" />
+        <result column="CURRENTTIME" property="currenttime" />
+        <result column="STATUS" property="status" />
+        <result column="STATUS_TIME" property="statusTime" />
+        <result column="COMPANY_NUMBER" property="companyNumber" />
+        <result column="PARENT_CUSTOMER_NUMBER" property="parentCustomerNumber" />
+        <result column="CREDIT_LEVEL_ID" property="creditLevelId" />
+        <result column="EMPLOYEE_AMOUNT_ID" property="employeeAmountId" />
+        <result column="MEMBER_COUNT" property="memberCount" />
+        <result column="LOCATION" property="location" />
+        <result column="ANNUAL_SALES" property="annualSales" />
+        <result column="VALUE_LEVEL_ID" property="valueLevelId" />
+        <result column="LICENCE_TYPE" property="licenceType" />
+        <result column="LICENCE_INFO" property="licenceInfo" />
+        <result column="IS_ORG" property="isOrg" />
+        <result column="ORG_CUSTOMER_CODE" property="orgCustomerCode" />
+        <result column="ORG_CODE" property="orgCode" />
+        <result column="CUSTOMER_LOCATION" property="customerLocation" />
+        <result column="CUSTOMER_RANK_ID" property="customerRankId" />
+        <result column="LOYALTY_LEVEL_ID" property="loyaltyLevelId" />
+        <result column="NATION_ID" property="nationId" />
+        <result column="TAX_NUM" property="taxNum" />
+        <result column="CORPORATION" property="corporation" />
+        <result column="LOGIN_FINANCING" property="loginFinancing" />
+        <result column="CURRENCY" property="currency" />
+        <result column="INDUSTRY_ID" property="industryId" />
+        <result column="ORGANIZATION_TYPE_ID" property="organizationTypeId" />
+        <result column="COUNTRY_ID" property="countryId" />
+        <result column="POST_CODE" property="postCode" />
+        <result column="ADDRESS_FULL_NAME" property="addressFullName" />
+        <result column="HOMEPAGE" property="homepage" />
+        <result column="BACKGROUND" property="background" />
+        <result column="ORG_CUST_ID" property="orgCustId" />
+        <result column="DESCRIPTION" property="description" />
+        <result column="SPARE_NUM" property="spareNum" />
+        <result column="SPARE_STR" property="spareStr" />
+        <result column="SPARE_LONG" property="spareLong" />
+        <result column="TRANS_IDH" property="transIdh" />
+        <result column="ACTION" property="action" />
+        <result column="ENABLED" property="enabled" />
+        <result column="OPPORT_SOURCE" property="opportSource" />
+        <result column="COUNTRY_NAME" property="countryName" />
+        <result column="CREATE_TIME" property="createTime" />
+        <result column="UPDATE_TIME" property="updateTime" />
+        <result column="CREATE_BY" property="createBy" />
+        <result column="UPDATE_BY" property="updateBy" />
+        <result column="MEMO" property="memo" />
+        <result column="IS_STRATEGIC" property="isStrategic" />
+        <result column="MIX_ATTR" property="mixAttr" />
+        <result column="UNI_SOCIAL_CREDIT_CODE" property="uniSocialCreditCode" />
+        <result column="CLUSTERING_SCENARIO" property="clusteringScenario" />
+        <result column="IS_EXPORT_AND_IMPORT" property="isExportAndImport" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        CUSTOMER_ID, CUSTOMER_NAME, CUSTOMER_NUMBER, CUSTOMER_PROVINCE_NUMBER, CUST_TYPE, CUSTOMER_SERV_LEVEL, CURRENTTIME, STATUS, STATUS_TIME, COMPANY_NUMBER, PARENT_CUSTOMER_NUMBER, CREDIT_LEVEL_ID, EMPLOYEE_AMOUNT_ID, MEMBER_COUNT, LOCATION, ANNUAL_SALES, VALUE_LEVEL_ID, LICENCE_TYPE, LICENCE_INFO, IS_ORG, ORG_CUSTOMER_CODE, ORG_CODE, CUSTOMER_LOCATION, CUSTOMER_RANK_ID, LOYALTY_LEVEL_ID, NATION_ID, TAX_NUM, CORPORATION, LOGIN_FINANCING, CURRENCY, INDUSTRY_ID, ORGANIZATION_TYPE_ID, COUNTRY_ID, POST_CODE, ADDRESS_FULL_NAME, HOMEPAGE, BACKGROUND, ORG_CUST_ID, DESCRIPTION, SPARE_NUM, SPARE_STR, SPARE_LONG, TRANS_IDH, ACTION, ENABLED, OPPORT_SOURCE, COUNTRY_NAME, CREATE_TIME, UPDATE_TIME, CREATE_BY, UPDATE_BY, MEMO, IS_STRATEGIC, MIX_ATTR, UNI_SOCIAL_CREDIT_CODE, CLUSTERING_SCENARIO, IS_EXPORT_AND_IMPORT
+    </sql>
+
+
+    <select id="selYesterdayData"  resultType="com.bboss.tools.bo.PubCustomer">
+        select * from abs_tools.pub_customer where date(CURRENTTIME) = date_sub(curdate(),interval 1 day)
+    </select>
+
+
+    <insert id="addpoordBackupsHis"  parameterType="com.bboss.tools.bo.PubCustomer">
+        insert into abs_tools.pub_customer_his
+        values
+        (
+            #{customerId}, #{customerName}, #{customerNumber},
+            #{customerProvinceNumber}, #{custType},#{customerServLevel},
+            now(),1, #{statusTime}, #{companyNumber},
+            #{parentCustomerNumber}, #{creditLevelId}, #{employeeAmountId},
+            #{memberCount}, #{location},
+            #{annualSales}, #{valueLevelId},#{licenceType},
+            #{licenceInfo},#{isOrg},
+            #{orgCustomerCode},#{orgCode},#{customerLocation},
+            #{customerRankId}, #{loyaltyLevelId}, #{nationId},
+            #{taxNum}, #{corporation}, #{loginFinancing},
+            #{currency}, #{industryId}, #{organizationTypeId},
+            #{countryId}, #{postCode}, #{addressFullName},
+            #{homepage}, #{background}, #{orgCustId},
+            #{description}, #{spareNum}, #{spareStr},
+            #{spareLong}, #{transIdh}, #{action}, #{enabled},
+            #{opportSource}, #{countryName}, #{createTime},
+            #{updateTime}, #{createBy}, #{updateBy},
+            #{memo}, #{isStrategic},  #{mixAttr}, #{uniSocialCreditCode},
+            #{clusteringScenario}, #{isExportAndImport}
+            )
+    </insert>
+
+
+    <delete id="deleteByCustomerNumber">
+        delete  from  abs_tools.pub_customer where CUSTOMER_NUMBER = #{customerNumber}
+    </delete>
+
+</mapper>

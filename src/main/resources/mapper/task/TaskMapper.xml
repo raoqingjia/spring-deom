@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bboss.tools.dao.task.TaskMapper">
+    <insert id="insertAbsTaskHis">
+        insert into abs_task.abs_task_his (
+            select * from abs_task.abs_task where poord_package_num = #{poordPackageNum})
+    </insert>
+    <insert id="insertAbsTaskItemHis">
+        insert into abs_task.abs_task_item_his (
+            select i.* from abs_task.abs_task_item i, abs_task.abs_task a
+            where i.abs_task_id = a.abs_task_id
+            and a.poord_package_num = #{poordPackageNum})
+    </insert>
+    <insert id="insertAbsTaskUserHis">
+        insert into abs_task.abs_task_user_his (
+            select u.* from abs_task.abs_task_user u, abs_task.abs_task a
+            where u.abs_task_id = a.abs_task_id
+              and a.poord_package_num = #{poordPackageNum})
+    </insert>
+    <insert id="insertAbsTaskItemHisByList">
+        insert into abs_task.abs_task_item_his (
+        select * from abs_task.abs_task_item
+        <where>
+            abs_task_id in
+            <foreach collection="absTaskIdList" item="item" index="index" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </where>
+        )
+    </insert>
+    <insert id="insertAbsTaskUserHisByList">
+        insert into abs_task.abs_task_user_his (
+        select * from abs_task.abs_task_user
+        <where>
+            abs_task_id in
+            <foreach collection="absTaskIdList" item="item" index="index" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </where>
+        )
+    </insert>
+    <insert id="insertAbsTaskHisByList">
+        insert into abs_task.abs_task_his (
+        select * from abs_task.abs_task
+        <where>
+            abs_task_id in
+            <foreach collection="absTaskIdList" item="item" index="index" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </where>
+        )
+    </insert>
+
+    <update id="updateabsTask"  parameterType="java.util.List">
+
+            update abs_task.abs_task
+            set
+                customer_name=#{customerName}
+            <where>
+                CUSTOMER_NUMBER = #{customerNumber}
+            </where>
+    </update>
+    <update id="updateabsTaskHis"  parameterType="java.util.List">
+            update abs_task.abs_task_his
+            set
+                customer_name=#{customerName}
+            <where>
+                CUSTOMER_NUMBER = #{customerNumber}
+            </where>
+    </update>
+    <update id="updateAbsTaskStatus">
+        update abs_task.abs_task set actual_status = 'Y' where poord_package_num = #{poordPackageNum}
+    </update>
+    <update id="updateAbsTaskItemStatus">
+        update abs_task.abs_task_item set actual_status = 'Y'
+        <where>
+            abs_task_id in
+            <foreach collection="absTaskIdList" item="item" index="index" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </where>
+    </update>
+    <update id="updateAbsTaskStatusByList">
+        update abs_task.abs_task set actual_status = 'Y'
+        <where>
+            abs_task_id in
+            <foreach collection="absTaskIdList" item="item" index="index" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </where>
+    </update>
+    <delete id="deleteAbsTask">
+        delete from abs_task.abs_task where poord_package_num = #{poordPackageNum}
+    </delete>
+    <delete id="deleteAbsTaskByList">
+        delete from abs_task.abs_task
+        <where>
+            abs_task_id in
+            <foreach collection="absTaskIdList" item="item" index="index" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </where>
+    </delete>
+    <delete id="deleteAbsTaskItemByList">
+        delete from abs_task.abs_task_item
+        <where>
+            abs_task_id in
+            <foreach collection="absTaskIdList" item="item" index="index" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </where>
+    </delete>
+    <delete id="deleteAbsTaskUserByList">
+        delete from abs_task.abs_task_user
+        <where>
+            abs_task_id in
+            <foreach collection="absTaskIdList" item="item" index="index" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </where>
+    </delete>
+    <select id="selectAbsTaskIdListByPoordPackageNum" resultType="java.lang.String">
+        select distinct abs_task_id from abs_task.abs_task where poord_package_num = #{poordPackageNum}
+    </select>
+    <select id="selectAbsTaskIdListByProdordSkuNum" resultType="java.lang.String">
+        select distinct abs_task_id from abs_task.abs_task_item where prodord_sku_num = #{prodordSkuNum}
+    </select>
+
+</mapper>

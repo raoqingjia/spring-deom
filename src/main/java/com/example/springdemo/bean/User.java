@@ -1,9 +1,6 @@
-package com.example.springdemo.dao;
-
-import lombok.Data;
+package com.example.springdemo.bean;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.stereotype.Repository;
 
 @Setter
 @Getter

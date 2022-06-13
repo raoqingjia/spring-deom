@@ -1,7 +1,7 @@
 package com.example.springdemo.controller;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.example.springdemo.dao.Province;
+import com.example.springdemo.bean.Province;
 import com.example.springdemo.service.impl.RedisService;
 import com.example.springdemo.utils.BaseResult;
 import com.example.springdemo.utils.RedisUtil;
@@ -75,7 +75,7 @@ public class RedisController {
 //       },
 //      "time":""
 //   }
-//    https://www.codenong.com/cs106123676/
+//  https://www.codenong.com/cs106123676/
     @RequestMapping(path = "/setJsonString", method = RequestMethod.POST)
     public BaseResult setJsonString( @RequestBody String params){
         logger.info("/redis/setJsonString 入参 params=>{}",params);

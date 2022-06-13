@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bboss.tools.dao.generl.GenerlMapper">
+
+    <resultMap id="BaseResultMap" type="com.bboss.tools.bo.BusinessConfig">
+        <id column="ID" jdbcType="VARCHAR" property="id" />
+        <result column="MODULE" jdbcType="VARCHAR" property="module" />
+        <result column="KEY" jdbcType="VARCHAR" property="key" />
+        <result column="VALUE" jdbcType="VARCHAR" property="value" />
+        <result column="STATUS" jdbcType="VARCHAR" property="status" />
+        <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+        <result column="DISPLAYORDER" jdbcType="VARCHAR" property="displayorder" />
+    </resultMap>
+
+    <update id="updatePoord_package"  parameterType="com.bboss.tools.bo.PubCustomer">
+            update abs_generl.poord_package
+            set
+        <trim  suffixOverrides=",">
+                <if test="customerName!=null and customerName!=''">
+                    customer_name=#{customerName},
+                </if>
+                <if test="location!=null and location!=''">
+                    LOCATION = #{location},
+                </if>
+                <if test="customerLocation!=null and customerLocation!=''">
+                    cust_prov_num = #{customerLocation},
+                </if>
+                <if test="custType!=null and custType!=''">
+                    cust_type=#{custType},
+                </if>
+                <if test="customerServLevel!=null and customerServLevel!=''">
+                    cust_serv_level=#{customerServLevel}
+                </if>
+        </trim>
+            where
+                customer_num=#{customerNumber}
+    </update>
+    <update id="updatePoord_package_his"  parameterType="com.bboss.tools.bo.PubCustomer">
+            update abs_generl.poord_package_his
+            set
+                customer_name=#{customerName}
+            where
+            customer_num = #{customerNumber}
+    </update>
+    <update id="updateProdord_sku"  >
+            update abs_generl.prodord_sku
+            set
+                customer_name=#{customerName}
+            where
+                customer_num = #{customerNumber}
+    </update>
+
+    <update id="updateProdord_sku_his" >
+            update abs_generl.prodord_sku_his
+            set
+                customer_name=#{customerName}
+            where
+                customer_num = #{customerNumber}
+    </update>
+
+    <select id="selectProdordSkuList" parameterType="java.util.List" resultType="java.util.HashMap">
+        select *
+        from abs_generl.prodord_sku
+        <where>
+            prodord_sku_num in
+            <foreach collection="ProdordSkuNums" item="item" index="index" open="(" separator="," close=")">#{item}</foreach>
+        </where>
+    </select>
+    <select id="selectPoordPackageList" parameterType="java.util.List" resultType="java.util.HashMap">
+        select *
+        from abs_generl.poord_package
+        <where>
+            poord_package_num in
+            <foreach collection="PoordPackageNums" item="item" index="index" open="(" separator="," close=")">#{item}</foreach>
+        </where>
+    </select>
+    <select id="selectByModuleAndKey" parameterType="String" resultType="String">
+        select value
+        from ABS_GENERL.BUSINESS_CONFIG t
+        where t.MODULE = #{module}
+          and t.KEY = #{key}
+    </select>
+    <select id="selectProdServCodeList" parameterType="java.util.List" resultType="java.util.HashMap">
+        select r.service_code, p.prodord_sku_num
+        from abs_generl.prodord_sku p, abs_order.order_route r
+        where p.sku_num = r.sku_num
+        and  prodord_sku_num in
+            <foreach collection="ProdordSkuNums" item="item" index="index" open="(" separator="," close=")">#{item}</foreach>
+    </select>
+
+    <select id="selectByModule" parameterType="String" resultMap="BaseResultMap">
+        select ID, MODULE, KEY, VALUE, STATUS, DESCRIPTION, DISPLAYORDER
+        from ABS_GENERL.BUSINESS_CONFIG t
+        where t.MODULE = #{module}
+    </select>
+
+    <select id="selectProdordSkuHisList" resultType="java.util.Map">
+        select *
+        from abs_generl.prodord_sku_his
+        <where>
+            prodord_sku_num in
+            <foreach collection="ProdordSkuNums" item="item" index="index" open="(" separator="," close=")">#{item}</foreach>
+        </where>
+    </select>
+</mapper>

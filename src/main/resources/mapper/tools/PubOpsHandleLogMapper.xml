@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bboss.tools.dao.tools.PubOpsHandleLogMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.bboss.tools.bo.PubOpsHandleLog">
+        <id column="operate_id" property="operateId" />
+        <result column="ord_num" property="ordNum" />
+        <result column="status" property="status" />
+        <result column="name" property="name" />
+        <result column="busi_type" property="busiType" />
+        <result column="operation" property="operation" />
+        <result column="type" property="type" />
+        <result column="seq" property="seq" />
+        <result column="handle_date" property="handleDate" />
+        <result column="handle_staff_num" property="handleStaffNum" />
+        <result column="description" property="description" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        operate_id, ord_num, status, name, busi_type, operation, type, seq, handle_date, handle_staff_num, description
+    </sql>
+    <insert id="insert" parameterType="com.bboss.tools.bo.PubOpsHandleLog">
+        insert into abs_tools.pub_ops_handle_log (OPERATE_ID, ORD_NUM, STATUS, NAME, BUSI_TYPE, OPERATION, TYPE, SEQ, HANDLE_DATE, HANDLE_STAFF_NUM, DESCRIPTION)
+        values (#{operateId,jdbcType=VARCHAR}, #{ordNum,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},
+                #{busiType,jdbcType=VARCHAR}, #{operation,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{seq,jdbcType=INTEGER},
+                #{handleDate,jdbcType=TIMESTAMP}, #{handleStaffNum,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR})
+    </insert>
+    <update id="updatePubOpsHandleLogStatus" >
+        update abs_tools.pub_ops_handle_log
+        set
+            status= '1'
+        where
+            operate_id = #{operateId}
+        and ord_Num = #{ordNum}
+    </update>
+    <update id="updatePubOpsHandleLog">
+        update abs_tools.pub_ops_handle_log
+        set status = #{status,jdbcType=INTEGER},
+            description = #{description,jdbcType=VARCHAR}
+        where
+              operate_id = #{operateId,jdbcType=VARCHAR}
+        and
+              ord_Num = #{ordNum}
+    </update>
+    <select id="selectMaxSeqByOperateId" resultType="java.lang.Integer">
+        select max(seq) from abs_tools.pub_ops_handle_log where operate_id like concat(#{operateId,jdbcType=VARCHAR},'%')
+    </select>
+    <select id="selectCountByOperateId" resultType="java.lang.Integer">
+        select count(1) from abs_tools.pub_ops_handle_log where operate_id like concat(#{operateId,jdbcType=VARCHAR},'%')
+    </select>
+    <select id="selectByProdordSkuNumsAndOperateId" resultType="com.bboss.tools.bo.PubOpsHandleLog">
+        select * from abs_tools.pub_ops_handle_log
+        where operate_id = #{operateId}
+        and ord_num in
+            <foreach collection="prodordSkuNums" item="item" index="index" open="(" separator="," close=")">#{item}</foreach>
+    </select>
+    <select id="selectRecentHandleLogList" resultType="com.bboss.tools.bo.PubOpsHandleLog">
+        select * from abs_tools.pub_ops_handle_log order by handle_date desc limit 200
+    </select>
+    <select id="selectByOpsQueryParam" resultType="com.bboss.tools.bo.PubOpsHandleLog">
+        select * from abs_tools.pub_ops_handle_log
+        where 1=1
+        <include refid="handle_result_parameter"/>
+        order by handle_date desc
+        limit 200
+    </select>
+    <sql id="handle_result_parameter">
+        <if test="opsHandleResultQueryParam.ordNum != null and opsHandleResultQueryParam.ordNum != '' ">
+            and ord_num = #{opsHandleResultQueryParam.ordNum,jdbcType=VARCHAR}
+        </if>
+        <if test="opsHandleResultQueryParam.operateId != null and opsHandleResultQueryParam.operateId != '' ">
+            and operate_id = #{opsHandleResultQueryParam.operateId,jdbcType=VARCHAR}
+        </if>
+        <if test="opsHandleResultQueryParam.operation != null and opsHandleResultQueryParam.operation != '' ">
+            and operation = #{opsHandleResultQueryParam.operation,jdbcType=VARCHAR}
+        </if>
+        <if test="opsHandleResultQueryParam.handleStaffNum != null and opsHandleResultQueryParam.handleStaffNum != '' ">
+            and handle_staff_num = #{opsHandleResultQueryParam.handleStaffNum,jdbcType=VARCHAR}
+        </if>
+        <if test="opsHandleResultQueryParam.startDate != null">
+            and handle_date &gt;= #{opsHandleResultQueryParam.startDate,jdbcType=TIMESTAMP}
+        </if>
+        <if test="opsHandleResultQueryParam.endDate != null">
+            and handle_date &lt; #{opsHandleResultQueryParam.endDate,jdbcType=TIMESTAMP}
+        </if>
+    </sql>
+</mapper>

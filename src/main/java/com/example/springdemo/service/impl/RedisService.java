@@ -2,7 +2,7 @@ package com.example.springdemo.service.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.example.springdemo.dao.User;
+import com.example.springdemo.bean.User;
 import com.example.springdemo.utils.BaseResult;
 import com.example.springdemo.utils.RedisUtil;
 import com.example.springdemo.utils.StringUtils;
