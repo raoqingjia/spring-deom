@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8082
   tomcat:
     uri-encoding: utf-8
 
@@ -7,9 +7,9 @@ spring:
   data:
     mongodb:
       uri: mongodb://abs:1qaz!QAZ@10.248.50.224:27017/app
-  mysqlshparm:
+  mysqlshparm:  //  阿里的druid就要将jdbcUrl改成url
       driverClassName: com.mysql.jdbc.Driver
-      url: jdbc:mysql://10.248.64.132:3307/abs_shparm?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+      jdbcUrl: jdbc:mysql://10.248.64.132:3307/abs_shparm?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
       username: root
       password: '!2#4%6&8'
   activemq:
