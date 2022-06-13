@@ -82,6 +82,24 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.46</version>
         </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>2.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.5.0</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -99,6 +117,16 @@
                 </configuration>
             </plugin>
         </plugins>
+        <resources>
+             <!--编译后对xml进行资源拷贝-->
+             <resource>
+                 <directory>src/main/java</directory>
+                 <includes>
+                     <include>**/*.xml</include>
+                 </includes>
+                 <filtering>true</filtering>
+             </resource>
+       </resources>
     </build>
 
 </project>
