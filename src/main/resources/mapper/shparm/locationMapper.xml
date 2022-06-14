@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.springdemo.dao.shaprm.LocationMapper">
+<mapper namespace="com.example.springdemo.dao.shparm.LocationMapper">
 
     <resultMap id="countryItem" type="com.example.springdemo.bo.CountryItem">
         <id column="countryid" property="countryId" />
@@ -19,7 +19,7 @@
                cityname,
                citynumber,
                create_time
-        from abs_shaprm.shaprm_country  order by countrynumber
+        from abs_shparm.shparm_country  order by countrynumber
     </select>
 
 <!--    <insert id="batchInsertPatrolReport" useGeneratedKeys="false">-->

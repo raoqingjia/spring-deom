@@ -1,7 +1,6 @@
-package com.example.springdemo.dao.shaprm;
+package com.example.springdemo.dao.shparm;
 
 import com.example.springdemo.bo.CountryItem;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 

@@ -18,7 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Configuration
-@MapperScan(basePackages = "com.example.springdemo.dao.shaprm",sqlSessionFactoryRef = "SqlSessionFactoryMysql")
+@MapperScan(basePackages = "com.example.springdemo.dao.shparm",sqlSessionFactoryRef = "SqlSessionFactoryMysql")
 public class DatasourceConfigMysql {
     private static final String MYBATIS_CONFIG = "mybatis-config.xml";
     private static final String MAPPER_LOCATION_MYSQL = "classpath:mapper/shparm/*.xml";

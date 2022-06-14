@@ -1,7 +1,7 @@
 package com.example.springdemo.service.impl;
 
 import com.example.springdemo.bo.CountryItem;
-import com.example.springdemo.dao.shaprm.LocationMapper;
+import com.example.springdemo.dao.shparm.LocationMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
