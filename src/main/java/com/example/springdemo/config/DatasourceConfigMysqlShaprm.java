@@ -18,21 +18,21 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Configuration
-@MapperScan(basePackages = "com.example.springdemo.dao.shparm",sqlSessionFactoryRef = "SqlSessionFactoryMysql")
-public class DatasourceConfigMysql {
+@MapperScan(basePackages = "com.example.springdemo.dao.shparm",sqlSessionFactoryRef = "SqlSessionFactoryMysqlShparm")
+public class DatasourceConfigMysqlShaprm {
     private static final String MYBATIS_CONFIG = "mybatis-config.xml";
     private static final String MAPPER_LOCATION_MYSQL = "classpath:mapper/shparm/*.xml";
 
-    @Bean(name = "DataSourceMysql")
+    @Bean(name = "DataSourceMysqlShparm")
     @Primary
-    @ConfigurationProperties("spring.mysqlshparm")
+    @ConfigurationProperties("spring.mysql.shparm")
     public DataSource dataSourceMysql() {
         return DataSourceBuilder.create().type(HikariDataSource.class).build();
     }
 
-    @Bean(name = "SqlSessionFactoryMysql")
+    @Bean(name = "SqlSessionFactoryMysqlShparm")
     @Primary
-    public SqlSessionFactory sqlSessionFactoryMysql(@Qualifier("DataSourceMysql") DataSource dataSource) throws Exception {
+    public SqlSessionFactory sqlSessionFactoryMysql(@Qualifier("DataSourceMysqlShparm") DataSource dataSource) throws Exception {
         log.debug("try obtain SqlSessionFactoryMysql");
         SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
         sessionFactory.setConfigLocation(new ClassPathResource(MYBATIS_CONFIG));

@@ -13,9 +13,9 @@ public class ShaprmService {
     @Autowired
     public LocationMapper locationMapper;
 
-    public List<CountryItem> selectCountry(){
+    public List<CountryItem> selectCountry(String countryName){
 
-        return locationMapper.selectCountryList();
+        return locationMapper.selectCountryList(countryName);
     }
 
 }
