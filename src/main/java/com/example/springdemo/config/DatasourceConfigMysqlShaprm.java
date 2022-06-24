@@ -24,7 +24,7 @@ import java.util.Properties;
 
 @Slf4j
 @Configuration
-@MapperScan(basePackages = "com.example.springdemo.dao.shparm",sqlSessionFactoryRef = "SqlSessionFactoryMysqlShparm")
+@MapperScan(basePackages = "com.example.springdemo.dao.shparm.**",sqlSessionFactoryRef = "SqlSessionFactoryMysqlShparm")
 public class DatasourceConfigMysqlShaprm {
     private static final String MYBATIS_CONFIG = "mybatis-config.xml";
     private static final String MAPPER_LOCATION_MYSQL = "classpath:mapper/shparm/*.xml";

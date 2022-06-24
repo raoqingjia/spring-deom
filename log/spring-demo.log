@@ -1,157 +1,684 @@
-2022-06-14 19:52:12.926 [main] INFO  com.example.springdemo.SpringDemoApplication:  Starting SpringDemoApplication using Java 1.8.0_131 on localhost with PID 8815 (/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes started by raoqingjia in /Users/raoqingjia/WebstormProjects/project_private/spring-demo)
-2022-06-14 19:52:12.930 [main] INFO  com.example.springdemo.SpringDemoApplication:  No active profile set, falling back to 1 default profile: "default"
-2022-06-14 19:52:13.624 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
-2022-06-14 19:52:13.624 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2022-06-14 19:52:13.635 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 6 ms. Found 0 MongoDB repository interfaces.
-2022-06-14 19:52:13.648 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
-2022-06-14 19:52:13.649 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-06-14 19:52:13.661 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
-2022-06-14 19:52:14.106 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat initialized with port(s): 8081 (http)
-2022-06-14 19:52:14.113 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Initializing ProtocolHandler ["http-nio-8081"]
-2022-06-14 19:52:14.114 [main] INFO  org.apache.catalina.core.StandardService:  Starting service [Tomcat]
-2022-06-14 19:52:14.114 [main] INFO  org.apache.catalina.core.StandardEngine:  Starting Servlet engine: [Apache Tomcat/9.0.58]
-2022-06-14 19:52:14.174 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring embedded WebApplicationContext
-2022-06-14 19:52:14.175 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:  Root WebApplicationContext: initialization completed in 1206 ms
-2022-06-14 19:52:14.297 [main] INFO  org.mongodb.driver.cluster:  Cluster created with settings {hosts=[10.248.50.224:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
-2022-06-14 19:52:14.438 [cluster-ClusterId{value='62a8766ee57b254c023dcde8', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:1, serverValue:4385}] to 10.248.50.224:27017
-2022-06-14 19:52:14.438 [cluster-rtt-ClusterId{value='62a8766ee57b254c023dcde8', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:2, serverValue:4386}] to 10.248.50.224:27017
-2022-06-14 19:52:14.438 [cluster-ClusterId{value='62a8766ee57b254c023dcde8', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Monitor thread successfully connected to server with description ServerDescription{address=10.248.50.224:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=111283383}
-2022-06-14 19:52:14.572 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  sentinel master: [crm]
-2022-06-14 19:52:14.572 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.223:13001
-2022-06-14 19:52:14.572 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.224:13002
-2022-06-14 19:52:14.576 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  LettuceConnectionFactorySentinel bean created
-2022-06-14 19:52:14.747 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  StringRedisTemplateSentinel bean created
-2022-06-14 19:52:14.904 [main] INFO  c.example.springdemo.config.DatasourceConfigMysql:  SqlSessionFactoryMysql obtained
-2022-06-14 19:52:15.319 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Starting ProtocolHandler ["http-nio-8081"]
-2022-06-14 19:52:15.341 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat started on port(s): 8081 (http) with context path ''
-2022-06-14 19:52:15.351 [main] INFO  com.example.springdemo.SpringDemoApplication:  Started SpringDemoApplication in 2.94 seconds (JVM running for 3.491)
-2022-06-14 19:52:44.593 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-06-14 19:52:44.593 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:  Initializing Servlet 'dispatcherServlet'
-2022-06-14 19:52:44.594 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:  Completed initialization in 1 ms
-2022-06-14 19:52:44.625 [http-nio-8081-exec-1] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Starting...
-2022-06-14 19:52:44.626 [http-nio-8081-exec-1] WARN  com.zaxxer.hikari.util.DriverDataSource:  Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2022-06-14 19:52:45.117 [http-nio-8081-exec-1] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Start completed.
-2022-06-14 19:52:45.220 [http-nio-8081-exec-1] ERROR o.a.c.c.C.[.[localhost].[/].[dispatcherServlet]:  Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'abs_shaprm.shaprm_country' doesn't exist
-### The error may exist in file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/locationMapper.xml]
-### The error may involve defaultParameterMap
-### The error occurred while setting parameters
-### SQL: select countryid,                countryname,                countrynumber,                cityname,                citynumber,                create_time         from abs_shaprm.shaprm_country  order by countrynumber
-### Cause: java.sql.SQLSyntaxErrorException: Table 'abs_shaprm.shaprm_country' doesn't exist
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'abs_shaprm.shaprm_country' doesn't exist] with root cause
-java.sql.SQLSyntaxErrorException: Table 'abs_shaprm.shaprm_country' doesn't exist
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:371)
-	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
-	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
-	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
-	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
-	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
-	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
-	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
-	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
-	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:89)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
-	at com.sun.proxy.$Proxy72.selectList(Unknown Source)
-	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
-	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
-	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
-	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:145)
-	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
-	at com.sun.proxy.$Proxy73.selectCountryList(Unknown Source)
-	at com.example.springdemo.service.impl.ShaprmService.selectCountry(ShaprmService.java:18)
-	at com.example.springdemo.controller.ShaprmController.selectCountry(ShaprmController.java:24)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+2022-06-24 10:09:20.556 [main] INFO  com.example.springdemo.SpringDemoApplication:  Starting SpringDemoApplication using Java 1.8.0_131 on localhost with PID 1902 (/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes started by raoqingjia in /Users/raoqingjia/WebstormProjects/project_private/spring-demo)
+2022-06-24 10:09:20.560 [main] INFO  com.example.springdemo.SpringDemoApplication:  No active profile set, falling back to 1 default profile: "default"
+2022-06-24 10:09:21.185 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-06-24 10:09:21.186 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-06-24 10:09:21.197 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 6 ms. Found 0 MongoDB repository interfaces.
+2022-06-24 10:09:21.209 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-06-24 10:09:21.210 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-06-24 10:09:21.221 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2022-06-24 10:09:21.670 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat initialized with port(s): 8081 (http)
+2022-06-24 10:09:21.677 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Initializing ProtocolHandler ["http-nio-8081"]
+2022-06-24 10:09:21.677 [main] INFO  org.apache.catalina.core.StandardService:  Starting service [Tomcat]
+2022-06-24 10:09:21.678 [main] INFO  org.apache.catalina.core.StandardEngine:  Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-06-24 10:09:21.734 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring embedded WebApplicationContext
+2022-06-24 10:09:21.734 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:  Root WebApplicationContext: initialization completed in 1140 ms
+2022-06-24 10:09:21.863 [main] INFO  org.mongodb.driver.cluster:  Cluster created with settings {hosts=[10.248.50.224:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-06-24 10:09:22.032 [cluster-ClusterId{value='62b51cd14ddee45fe0766255', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:1, serverValue:4540}] to 10.248.50.224:27017
+2022-06-24 10:09:22.032 [cluster-rtt-ClusterId{value='62b51cd14ddee45fe0766255', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:2, serverValue:4539}] to 10.248.50.224:27017
+2022-06-24 10:09:22.032 [cluster-ClusterId{value='62b51cd14ddee45fe0766255', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Monitor thread successfully connected to server with description ServerDescription{address=10.248.50.224:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=135378849}
+2022-06-24 10:09:22.299 [main] INFO  c.e.springdemo.config.DatasourceConfigMysqlOmss:  SqlSessionFactoryMysql obtained
+2022-06-24 10:09:22.320 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  sentinel master: [crm]
+2022-06-24 10:09:22.321 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.223:13001
+2022-06-24 10:09:22.321 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.224:13002
+2022-06-24 10:09:22.324 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  LettuceConnectionFactorySentinel bean created
+2022-06-24 10:09:22.529 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  StringRedisTemplateSentinel bean created
+2022-06-24 10:09:22.573 [main] INFO  c.e.springdemo.config.DatasourceConfigMysqlShaprm:  SqlSessionFactoryMysql obtained
+2022-06-24 10:09:22.575 [main] INFO  c.e.springdemo.config.DatasourceConfigMysqlOmss:  transactionManagerMysql obtained
+2022-06-24 10:09:22.990 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Starting ProtocolHandler ["http-nio-8081"]
+2022-06-24 10:09:23.012 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat started on port(s): 8081 (http) with context path ''
+2022-06-24 10:09:23.020 [main] INFO  com.example.springdemo.SpringDemoApplication:  Started SpringDemoApplication in 2.869 seconds (JVM running for 8.308)
+2022-06-24 10:09:29.468 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-24 10:09:29.469 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:  Initializing Servlet 'dispatcherServlet'
+2022-06-24 10:09:29.470 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:  Completed initialization in 1 ms
+2022-06-24 10:09:29.551 [http-nio-8081-exec-1] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Starting...
+2022-06-24 10:09:29.553 [http-nio-8081-exec-1] WARN  com.zaxxer.hikari.util.DriverDataSource:  Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2022-06-24 10:09:30.393 [http-nio-8081-exec-1] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Start completed.
+2022-06-24 10:12:31.968 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Shutdown initiated...
+2022-06-24 10:12:31.976 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Shutdown completed.
+2022-06-24 10:13:11.919 [main] INFO  com.example.springdemo.SpringDemoApplication:  Starting SpringDemoApplication using Java 1.8.0_131 on localhost with PID 1942 (/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes started by raoqingjia in /Users/raoqingjia/WebstormProjects/project_private/spring-demo)
+2022-06-24 10:13:11.921 [main] INFO  com.example.springdemo.SpringDemoApplication:  No active profile set, falling back to 1 default profile: "default"
+2022-06-24 10:13:12.413 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-06-24 10:13:12.414 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-06-24 10:13:12.421 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 5 ms. Found 0 MongoDB repository interfaces.
+2022-06-24 10:13:12.430 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-06-24 10:13:12.430 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-06-24 10:13:12.438 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2022-06-24 10:13:12.805 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat initialized with port(s): 8081 (http)
+2022-06-24 10:13:12.811 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Initializing ProtocolHandler ["http-nio-8081"]
+2022-06-24 10:13:12.811 [main] INFO  org.apache.catalina.core.StandardService:  Starting service [Tomcat]
+2022-06-24 10:13:12.811 [main] INFO  org.apache.catalina.core.StandardEngine:  Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-06-24 10:13:12.859 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring embedded WebApplicationContext
+2022-06-24 10:13:12.859 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:  Root WebApplicationContext: initialization completed in 906 ms
+2022-06-24 10:13:12.949 [main] INFO  org.mongodb.driver.cluster:  Cluster created with settings {hosts=[10.248.50.224:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-06-24 10:13:13.113 [cluster-ClusterId{value='62b51db8566f0a4bb982338f', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:1, serverValue:4542}] to 10.248.50.224:27017
+2022-06-24 10:13:13.113 [cluster-rtt-ClusterId{value='62b51db8566f0a4bb982338f', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:2, serverValue:4541}] to 10.248.50.224:27017
+2022-06-24 10:13:13.113 [cluster-ClusterId{value='62b51db8566f0a4bb982338f', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Monitor thread successfully connected to server with description ServerDescription{address=10.248.50.224:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=135011561}
+2022-06-24 10:13:13.331 [main] INFO  c.e.springdemo.config.DatasourceConfigMysqlOmss:  SqlSessionFactoryMysql obtained
+2022-06-24 10:13:13.347 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  sentinel master: [crm]
+2022-06-24 10:13:13.348 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.223:13001
+2022-06-24 10:13:13.348 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.224:13002
+2022-06-24 10:13:13.351 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  LettuceConnectionFactorySentinel bean created
+2022-06-24 10:13:13.487 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  StringRedisTemplateSentinel bean created
+2022-06-24 10:13:13.525 [main] INFO  c.e.springdemo.config.DatasourceConfigMysqlShaprm:  SqlSessionFactoryMysql obtained
+2022-06-24 10:13:13.527 [main] INFO  c.e.springdemo.config.DatasourceConfigMysqlOmss:  transactionManagerMysql obtained
+2022-06-24 10:13:13.918 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Starting ProtocolHandler ["http-nio-8081"]
+2022-06-24 10:13:13.941 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat started on port(s): 8081 (http) with context path ''
+2022-06-24 10:13:13.949 [main] INFO  com.example.springdemo.SpringDemoApplication:  Started SpringDemoApplication in 2.349 seconds (JVM running for 7.776)
+2022-06-24 10:13:27.796 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-24 10:13:27.797 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:  Initializing Servlet 'dispatcherServlet'
+2022-06-24 10:13:27.798 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:  Completed initialization in 1 ms
+2022-06-24 10:13:27.861 [http-nio-8081-exec-1] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Starting...
+2022-06-24 10:13:27.862 [http-nio-8081-exec-1] WARN  com.zaxxer.hikari.util.DriverDataSource:  Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2022-06-24 10:13:28.434 [http-nio-8081-exec-1] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Start completed.
+2022-06-24 10:15:20.334 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Shutdown initiated...
+2022-06-24 10:15:20.340 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Shutdown completed.
+2022-06-24 10:15:29.475 [main] INFO  com.example.springdemo.SpringDemoApplication:  Starting SpringDemoApplication using Java 1.8.0_131 on localhost with PID 1965 (/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes started by raoqingjia in /Users/raoqingjia/WebstormProjects/project_private/spring-demo)
+2022-06-24 10:15:29.476 [main] INFO  com.example.springdemo.SpringDemoApplication:  No active profile set, falling back to 1 default profile: "default"
+2022-06-24 10:15:29.946 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-06-24 10:15:29.946 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-06-24 10:15:29.955 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 5 ms. Found 0 MongoDB repository interfaces.
+2022-06-24 10:15:29.963 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-06-24 10:15:29.964 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-06-24 10:15:29.972 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2022-06-24 10:15:30.325 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat initialized with port(s): 8081 (http)
+2022-06-24 10:15:30.331 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Initializing ProtocolHandler ["http-nio-8081"]
+2022-06-24 10:15:30.332 [main] INFO  org.apache.catalina.core.StandardService:  Starting service [Tomcat]
+2022-06-24 10:15:30.332 [main] INFO  org.apache.catalina.core.StandardEngine:  Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-06-24 10:15:30.375 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring embedded WebApplicationContext
+2022-06-24 10:15:30.375 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:  Root WebApplicationContext: initialization completed in 869 ms
+2022-06-24 10:15:30.454 [main] INFO  org.mongodb.driver.cluster:  Cluster created with settings {hosts=[10.248.50.224:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-06-24 10:15:30.620 [cluster-rtt-ClusterId{value='62b51e4275715b792983b951', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:2, serverValue:4544}] to 10.248.50.224:27017
+2022-06-24 10:15:30.620 [cluster-ClusterId{value='62b51e4275715b792983b951', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:1, serverValue:4543}] to 10.248.50.224:27017
+2022-06-24 10:15:30.620 [cluster-ClusterId{value='62b51e4275715b792983b951', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Monitor thread successfully connected to server with description ServerDescription{address=10.248.50.224:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=143477274}
+2022-06-24 10:15:30.795 [main] INFO  c.e.springdemo.config.DatasourceConfigMysqlOmss:  SqlSessionFactoryMysql obtained
+2022-06-24 10:15:30.810 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  sentinel master: [crm]
+2022-06-24 10:15:30.811 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.223:13001
+2022-06-24 10:15:30.811 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.224:13002
+2022-06-24 10:15:30.814 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  LettuceConnectionFactorySentinel bean created
+2022-06-24 10:15:30.949 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  StringRedisTemplateSentinel bean created
+2022-06-24 10:15:30.985 [main] INFO  c.e.springdemo.config.DatasourceConfigMysqlShaprm:  SqlSessionFactoryMysql obtained
+2022-06-24 10:15:30.987 [main] INFO  c.e.springdemo.config.DatasourceConfigMysqlOmss:  transactionManagerMysql obtained
+2022-06-24 10:15:31.302 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Starting ProtocolHandler ["http-nio-8081"]
+2022-06-24 10:15:31.323 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat started on port(s): 8081 (http) with context path ''
+2022-06-24 10:15:31.332 [main] INFO  com.example.springdemo.SpringDemoApplication:  Started SpringDemoApplication in 2.169 seconds (JVM running for 7.57)
+2022-06-24 10:15:35.435 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-24 10:15:35.435 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:  Initializing Servlet 'dispatcherServlet'
+2022-06-24 10:15:35.436 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:  Completed initialization in 1 ms
+2022-06-24 10:15:35.498 [http-nio-8081-exec-1] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Starting...
+2022-06-24 10:15:35.499 [http-nio-8081-exec-1] WARN  com.zaxxer.hikari.util.DriverDataSource:  Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2022-06-24 10:15:36.042 [http-nio-8081-exec-1] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Start completed.
+2022-06-24 10:20:30.186 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Shutdown initiated...
+2022-06-24 10:20:30.193 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Shutdown completed.
+2022-06-24 10:20:38.590 [main] INFO  com.example.springdemo.SpringDemoApplication:  Starting SpringDemoApplication using Java 1.8.0_131 on localhost with PID 2006 (/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes started by raoqingjia in /Users/raoqingjia/WebstormProjects/project_private/spring-demo)
+2022-06-24 10:20:38.592 [main] INFO  com.example.springdemo.SpringDemoApplication:  No active profile set, falling back to 1 default profile: "default"
+2022-06-24 10:20:39.065 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-06-24 10:20:39.066 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-06-24 10:20:39.074 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 5 ms. Found 0 MongoDB repository interfaces.
+2022-06-24 10:20:39.082 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-06-24 10:20:39.082 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-06-24 10:20:39.091 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2022-06-24 10:20:39.455 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat initialized with port(s): 8081 (http)
+2022-06-24 10:20:39.461 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Initializing ProtocolHandler ["http-nio-8081"]
+2022-06-24 10:20:39.461 [main] INFO  org.apache.catalina.core.StandardService:  Starting service [Tomcat]
+2022-06-24 10:20:39.461 [main] INFO  org.apache.catalina.core.StandardEngine:  Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-06-24 10:20:39.507 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring embedded WebApplicationContext
+2022-06-24 10:20:39.507 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:  Root WebApplicationContext: initialization completed in 888 ms
+2022-06-24 10:20:39.589 [main] INFO  org.mongodb.driver.cluster:  Cluster created with settings {hosts=[10.248.50.224:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-06-24 10:20:39.751 [cluster-rtt-ClusterId{value='62b51f77f3841979098c7040', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:1, serverValue:4547}] to 10.248.50.224:27017
+2022-06-24 10:20:39.751 [cluster-ClusterId{value='62b51f77f3841979098c7040', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:2, serverValue:4546}] to 10.248.50.224:27017
+2022-06-24 10:20:39.751 [cluster-ClusterId{value='62b51f77f3841979098c7040', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Monitor thread successfully connected to server with description ServerDescription{address=10.248.50.224:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=138803398}
+2022-06-24 10:20:39.940 [main] INFO  c.e.springdemo.config.DatasourceConfigMysqlOmss:  SqlSessionFactoryMysql obtained
+2022-06-24 10:20:39.953 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  sentinel master: [crm]
+2022-06-24 10:20:39.954 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.223:13001
+2022-06-24 10:20:39.954 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.224:13002
+2022-06-24 10:20:39.957 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  LettuceConnectionFactorySentinel bean created
+2022-06-24 10:20:40.083 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  StringRedisTemplateSentinel bean created
+2022-06-24 10:20:40.123 [main] INFO  c.e.springdemo.config.DatasourceConfigMysqlShaprm:  SqlSessionFactoryMysql obtained
+2022-06-24 10:20:40.125 [main] INFO  c.e.springdemo.config.DatasourceConfigMysqlOmss:  transactionManagerMysql obtained
+2022-06-24 10:20:40.457 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Starting ProtocolHandler ["http-nio-8081"]
+2022-06-24 10:20:40.477 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat started on port(s): 8081 (http) with context path ''
+2022-06-24 10:20:40.485 [main] INFO  com.example.springdemo.SpringDemoApplication:  Started SpringDemoApplication in 2.203 seconds (JVM running for 7.611)
+2022-06-24 10:20:46.160 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-24 10:20:46.160 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:  Initializing Servlet 'dispatcherServlet'
+2022-06-24 10:20:46.162 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:  Completed initialization in 2 ms
+2022-06-24 10:20:46.198 [http-nio-8081-exec-1] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Starting...
+2022-06-24 10:20:46.199 [http-nio-8081-exec-1] WARN  com.zaxxer.hikari.util.DriverDataSource:  Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2022-06-24 10:20:46.517 [http-nio-8081-exec-1] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Start completed.
+2022-06-24 10:21:58.729 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Shutdown initiated...
+2022-06-24 10:21:58.741 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Shutdown completed.
+2022-06-24 10:22:07.091 [main] INFO  com.example.springdemo.SpringDemoApplication:  Starting SpringDemoApplication using Java 1.8.0_131 on localhost with PID 2030 (/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes started by raoqingjia in /Users/raoqingjia/WebstormProjects/project_private/spring-demo)
+2022-06-24 10:22:07.093 [main] INFO  com.example.springdemo.SpringDemoApplication:  No active profile set, falling back to 1 default profile: "default"
+2022-06-24 10:22:07.627 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-06-24 10:22:07.628 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-06-24 10:22:07.640 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 8 ms. Found 0 MongoDB repository interfaces.
+2022-06-24 10:22:07.653 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-06-24 10:22:07.654 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-06-24 10:22:07.664 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2022-06-24 10:22:08.053 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat initialized with port(s): 8081 (http)
+2022-06-24 10:22:08.059 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Initializing ProtocolHandler ["http-nio-8081"]
+2022-06-24 10:22:08.060 [main] INFO  org.apache.catalina.core.StandardService:  Starting service [Tomcat]
+2022-06-24 10:22:08.060 [main] INFO  org.apache.catalina.core.StandardEngine:  Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-06-24 10:22:08.106 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring embedded WebApplicationContext
+2022-06-24 10:22:08.106 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:  Root WebApplicationContext: initialization completed in 981 ms
+2022-06-24 10:22:08.186 [main] INFO  org.mongodb.driver.cluster:  Cluster created with settings {hosts=[10.248.50.224:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-06-24 10:22:08.362 [cluster-rtt-ClusterId{value='62b51fd00b70962e6cf009fd', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:2, serverValue:4549}] to 10.248.50.224:27017
+2022-06-24 10:22:08.362 [cluster-ClusterId{value='62b51fd00b70962e6cf009fd', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:1, serverValue:4548}] to 10.248.50.224:27017
+2022-06-24 10:22:08.363 [cluster-ClusterId{value='62b51fd00b70962e6cf009fd', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Monitor thread successfully connected to server with description ServerDescription{address=10.248.50.224:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=154622646}
+2022-06-24 10:22:08.555 [main] INFO  c.e.springdemo.config.DatasourceConfigMysqlOmss:  SqlSessionFactoryMysql obtained
+2022-06-24 10:22:08.572 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  sentinel master: [crm]
+2022-06-24 10:22:08.573 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.223:13001
+2022-06-24 10:22:08.573 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.224:13002
+2022-06-24 10:22:08.577 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  LettuceConnectionFactorySentinel bean created
+2022-06-24 10:22:08.726 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  StringRedisTemplateSentinel bean created
+2022-06-24 10:22:08.756 [main] INFO  c.e.springdemo.config.DatasourceConfigMysqlShaprm:  SqlSessionFactoryMysql obtained
+2022-06-24 10:22:08.758 [main] INFO  c.e.springdemo.config.DatasourceConfigMysqlOmss:  transactionManagerMysql obtained
+2022-06-24 10:22:09.119 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Starting ProtocolHandler ["http-nio-8081"]
+2022-06-24 10:22:09.140 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat started on port(s): 8081 (http) with context path ''
+2022-06-24 10:22:09.148 [main] INFO  com.example.springdemo.SpringDemoApplication:  Started SpringDemoApplication in 2.377 seconds (JVM running for 7.816)
+2022-06-24 10:22:12.312 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-24 10:22:12.313 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:  Initializing Servlet 'dispatcherServlet'
+2022-06-24 10:22:12.314 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:  Completed initialization in 1 ms
+2022-06-24 10:22:12.364 [http-nio-8081-exec-1] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Starting...
+2022-06-24 10:22:12.365 [http-nio-8081-exec-1] WARN  com.zaxxer.hikari.util.DriverDataSource:  Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2022-06-24 10:22:13.255 [http-nio-8081-exec-1] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Start completed.
+2022-06-24 10:23:14.563 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Shutdown initiated...
+2022-06-24 10:23:14.576 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Shutdown completed.
+2022-06-24 10:23:21.797 [main] INFO  com.example.springdemo.SpringDemoApplication:  Starting SpringDemoApplication using Java 1.8.0_131 on localhost with PID 2042 (/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes started by raoqingjia in /Users/raoqingjia/WebstormProjects/project_private/spring-demo)
+2022-06-24 10:23:21.799 [main] INFO  com.example.springdemo.SpringDemoApplication:  No active profile set, falling back to 1 default profile: "default"
+2022-06-24 10:23:22.275 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-06-24 10:23:22.275 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-06-24 10:23:22.283 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 5 ms. Found 0 MongoDB repository interfaces.
+2022-06-24 10:23:22.291 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-06-24 10:23:22.292 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-06-24 10:23:22.300 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2022-06-24 10:23:22.669 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat initialized with port(s): 8081 (http)
+2022-06-24 10:23:22.676 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Initializing ProtocolHandler ["http-nio-8081"]
+2022-06-24 10:23:22.676 [main] INFO  org.apache.catalina.core.StandardService:  Starting service [Tomcat]
+2022-06-24 10:23:22.677 [main] INFO  org.apache.catalina.core.StandardEngine:  Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-06-24 10:23:22.730 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring embedded WebApplicationContext
+2022-06-24 10:23:22.730 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:  Root WebApplicationContext: initialization completed in 904 ms
+2022-06-24 10:23:22.820 [main] INFO  org.mongodb.driver.cluster:  Cluster created with settings {hosts=[10.248.50.224:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-06-24 10:23:22.978 [cluster-ClusterId{value='62b5201a5a58e5068610e3cf', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:1, serverValue:4551}] to 10.248.50.224:27017
+2022-06-24 10:23:22.978 [cluster-rtt-ClusterId{value='62b5201a5a58e5068610e3cf', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:2, serverValue:4550}] to 10.248.50.224:27017
+2022-06-24 10:23:22.978 [cluster-ClusterId{value='62b5201a5a58e5068610e3cf', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Monitor thread successfully connected to server with description ServerDescription{address=10.248.50.224:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=133973791}
+2022-06-24 10:23:23.180 [main] INFO  c.e.springdemo.config.DatasourceConfigMysqlOmss:  SqlSessionFactoryMysql obtained
+2022-06-24 10:23:23.195 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  sentinel master: [crm]
+2022-06-24 10:23:23.196 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.223:13001
+2022-06-24 10:23:23.196 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.224:13002
+2022-06-24 10:23:23.198 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  LettuceConnectionFactorySentinel bean created
+2022-06-24 10:23:23.330 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  StringRedisTemplateSentinel bean created
+2022-06-24 10:23:23.359 [main] INFO  c.e.springdemo.config.DatasourceConfigMysqlShaprm:  SqlSessionFactoryMysql obtained
+2022-06-24 10:23:23.360 [main] INFO  c.e.springdemo.config.DatasourceConfigMysqlOmss:  transactionManagerMysql obtained
+2022-06-24 10:23:23.700 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Starting ProtocolHandler ["http-nio-8081"]
+2022-06-24 10:23:23.720 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat started on port(s): 8081 (http) with context path ''
+2022-06-24 10:23:23.728 [main] INFO  com.example.springdemo.SpringDemoApplication:  Started SpringDemoApplication in 2.276 seconds (JVM running for 7.721)
+2022-06-24 10:24:35.126 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-24 10:24:35.127 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:  Initializing Servlet 'dispatcherServlet'
+2022-06-24 10:24:35.129 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:  Completed initialization in 1 ms
+2022-06-24 10:24:35.198 [http-nio-8081-exec-1] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Starting...
+2022-06-24 10:24:35.199 [http-nio-8081-exec-1] WARN  com.zaxxer.hikari.util.DriverDataSource:  Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2022-06-24 10:24:35.865 [http-nio-8081-exec-1] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Start completed.
+2022-06-24 10:25:36.949 [http-nio-8081-exec-7] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-2 - Starting...
+2022-06-24 10:25:36.950 [http-nio-8081-exec-7] WARN  com.zaxxer.hikari.util.DriverDataSource:  Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2022-06-24 10:25:37.202 [http-nio-8081-exec-7] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-2 - Start completed.
+2022-06-24 10:26:18.993 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Shutdown initiated...
+2022-06-24 10:26:18.999 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Shutdown completed.
+2022-06-24 10:26:19.110 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-2 - Shutdown initiated...
+2022-06-24 10:26:19.117 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-2 - Shutdown completed.
+2022-06-24 10:26:27.365 [main] INFO  com.example.springdemo.SpringDemoApplication:  Starting SpringDemoApplication using Java 1.8.0_131 on localhost with PID 2070 (/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes started by raoqingjia in /Users/raoqingjia/WebstormProjects/project_private/spring-demo)
+2022-06-24 10:26:27.369 [main] INFO  com.example.springdemo.SpringDemoApplication:  No active profile set, falling back to 1 default profile: "default"
+2022-06-24 10:26:27.882 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-06-24 10:26:27.883 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-06-24 10:26:27.893 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 5 ms. Found 0 MongoDB repository interfaces.
+2022-06-24 10:26:27.901 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-06-24 10:26:27.902 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-06-24 10:26:27.910 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2022-06-24 10:26:28.280 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat initialized with port(s): 8081 (http)
+2022-06-24 10:26:28.286 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Initializing ProtocolHandler ["http-nio-8081"]
+2022-06-24 10:26:28.286 [main] INFO  org.apache.catalina.core.StandardService:  Starting service [Tomcat]
+2022-06-24 10:26:28.286 [main] INFO  org.apache.catalina.core.StandardEngine:  Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-06-24 10:26:28.333 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring embedded WebApplicationContext
+2022-06-24 10:26:28.333 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:  Root WebApplicationContext: initialization completed in 924 ms
+2022-06-24 10:26:28.418 [main] INFO  org.mongodb.driver.cluster:  Cluster created with settings {hosts=[10.248.50.224:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-06-24 10:26:28.568 [cluster-rtt-ClusterId{value='62b520d4953cca6773eb9320', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:2, serverValue:4553}] to 10.248.50.224:27017
+2022-06-24 10:26:28.568 [cluster-ClusterId{value='62b520d4953cca6773eb9320', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:1, serverValue:4552}] to 10.248.50.224:27017
+2022-06-24 10:26:28.568 [cluster-ClusterId{value='62b520d4953cca6773eb9320', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Monitor thread successfully connected to server with description ServerDescription{address=10.248.50.224:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=125793185}
+2022-06-24 10:26:28.787 [main] INFO  c.e.springdemo.config.DatasourceConfigMysqlOmss:  SqlSessionFactoryMysql obtained
+2022-06-24 10:26:28.801 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  sentinel master: [crm]
+2022-06-24 10:26:28.802 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.223:13001
+2022-06-24 10:26:28.802 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.224:13002
+2022-06-24 10:26:28.805 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  LettuceConnectionFactorySentinel bean created
+2022-06-24 10:26:28.934 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  StringRedisTemplateSentinel bean created
+2022-06-24 10:26:28.963 [main] INFO  c.e.springdemo.config.DatasourceConfigMysqlShaprm:  SqlSessionFactoryMysql obtained
+2022-06-24 10:26:28.964 [main] INFO  c.e.springdemo.config.DatasourceConfigMysqlOmss:  transactionManagerMysql obtained
+2022-06-24 10:26:29.357 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Starting ProtocolHandler ["http-nio-8081"]
+2022-06-24 10:26:29.385 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat started on port(s): 8081 (http) with context path ''
+2022-06-24 10:26:29.396 [main] INFO  com.example.springdemo.SpringDemoApplication:  Started SpringDemoApplication in 2.376 seconds (JVM running for 7.788)
+2022-06-24 10:26:45.466 [http-nio-8081-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-24 10:26:45.466 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet:  Initializing Servlet 'dispatcherServlet'
+2022-06-24 10:26:45.467 [http-nio-8081-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet:  Completed initialization in 1 ms
+2022-06-24 10:26:45.533 [http-nio-8081-exec-2] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Starting...
+2022-06-24 10:26:45.534 [http-nio-8081-exec-2] WARN  com.zaxxer.hikari.util.DriverDataSource:  Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2022-06-24 10:26:46.161 [http-nio-8081-exec-2] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Start completed.
+2022-06-24 13:00:08.771 [cluster-rtt-ClusterId{value='62b520d4953cca6773eb9320', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:3, serverValue:4554}] to 10.248.50.224:27017
+2022-06-24 13:00:13.063 [cluster-ClusterId{value='62b520d4953cca6773eb9320', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Exception in monitor thread while connecting to server 10.248.50.224:27017
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:701)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:579)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415)
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:374)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:216)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
 	at java.lang.Thread.run(Thread.java:748)
-2022-06-14 19:55:07.547 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Shutdown initiated...
-2022-06-14 19:55:07.554 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Shutdown completed.
-2022-06-14 19:55:13.906 [main] INFO  com.example.springdemo.SpringDemoApplication:  Starting SpringDemoApplication using Java 1.8.0_131 on localhost with PID 8864 (/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes started by raoqingjia in /Users/raoqingjia/WebstormProjects/project_private/spring-demo)
-2022-06-14 19:55:13.908 [main] INFO  com.example.springdemo.SpringDemoApplication:  No active profile set, falling back to 1 default profile: "default"
-2022-06-14 19:55:14.449 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
-2022-06-14 19:55:14.450 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2022-06-14 19:55:14.458 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 5 ms. Found 0 MongoDB repository interfaces.
-2022-06-14 19:55:14.467 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
-2022-06-14 19:55:14.468 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-06-14 19:55:14.476 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
-2022-06-14 19:55:14.830 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat initialized with port(s): 8081 (http)
-2022-06-14 19:55:14.836 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Initializing ProtocolHandler ["http-nio-8081"]
-2022-06-14 19:55:14.836 [main] INFO  org.apache.catalina.core.StandardService:  Starting service [Tomcat]
-2022-06-14 19:55:14.837 [main] INFO  org.apache.catalina.core.StandardEngine:  Starting Servlet engine: [Apache Tomcat/9.0.58]
-2022-06-14 19:55:14.881 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring embedded WebApplicationContext
-2022-06-14 19:55:14.882 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:  Root WebApplicationContext: initialization completed in 942 ms
-2022-06-14 19:55:14.963 [main] INFO  org.mongodb.driver.cluster:  Cluster created with settings {hosts=[10.248.50.224:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
-2022-06-14 19:55:15.106 [cluster-ClusterId{value='62a8772279650675379760c9', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:1, serverValue:4387}] to 10.248.50.224:27017
-2022-06-14 19:55:15.106 [cluster-rtt-ClusterId{value='62a8772279650675379760c9', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:2, serverValue:4388}] to 10.248.50.224:27017
-2022-06-14 19:55:15.107 [cluster-ClusterId{value='62a8772279650675379760c9', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Monitor thread successfully connected to server with description ServerDescription{address=10.248.50.224:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=120408475}
-2022-06-14 19:55:15.202 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  sentinel master: [crm]
-2022-06-14 19:55:15.203 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.223:13001
-2022-06-14 19:55:15.203 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.224:13002
-2022-06-14 19:55:15.206 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  LettuceConnectionFactorySentinel bean created
-2022-06-14 19:55:15.324 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  StringRedisTemplateSentinel bean created
-2022-06-14 19:55:15.457 [main] INFO  c.example.springdemo.config.DatasourceConfigMysql:  SqlSessionFactoryMysql obtained
-2022-06-14 19:55:15.771 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Starting ProtocolHandler ["http-nio-8081"]
-2022-06-14 19:55:15.792 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat started on port(s): 8081 (http) with context path ''
-2022-06-14 19:55:15.801 [main] INFO  com.example.springdemo.SpringDemoApplication:  Started SpringDemoApplication in 2.251 seconds (JVM running for 2.682)
-2022-06-14 19:55:18.438 [http-nio-8081-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-06-14 19:55:18.439 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:  Initializing Servlet 'dispatcherServlet'
-2022-06-14 19:55:18.440 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:  Completed initialization in 1 ms
-2022-06-14 19:55:18.466 [http-nio-8081-exec-1] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Starting...
-2022-06-14 19:55:18.467 [http-nio-8081-exec-1] WARN  com.zaxxer.hikari.util.DriverDataSource:  Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2022-06-14 19:55:18.876 [http-nio-8081-exec-1] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Start completed.
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:718)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:576)
+	... 5 common frames omitted
+2022-06-24 13:00:13.380 [cluster-ClusterId{value='62b520d4953cca6773eb9320', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:4, serverValue:4555}] to 10.248.50.224:27017
+2022-06-24 13:00:13.382 [cluster-ClusterId{value='62b520d4953cca6773eb9320', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Monitor thread successfully connected to server with description ServerDescription{address=10.248.50.224:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=249101528}
+2022-06-24 13:00:14.267 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool:  HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=30m27s100ms).
+2022-06-24 13:35:44.614 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool:  HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=35m334ms).
+2022-06-24 13:35:49.780 [cluster-rtt-ClusterId{value='62b520d4953cca6773eb9320', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:5, serverValue:4556}] to 10.248.50.224:27017
+2022-06-24 13:35:53.902 [cluster-ClusterId{value='62b520d4953cca6773eb9320', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Exception in monitor thread while connecting to server 10.248.50.224:27017
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:701)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:579)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415)
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:374)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:216)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:718)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:576)
+	... 5 common frames omitted
+2022-06-24 13:35:54.174 [cluster-ClusterId{value='62b520d4953cca6773eb9320', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:6, serverValue:4557}] to 10.248.50.224:27017
+2022-06-24 13:35:54.175 [cluster-ClusterId{value='62b520d4953cca6773eb9320', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Monitor thread successfully connected to server with description ServerDescription{address=10.248.50.224:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=249261806}
+2022-06-24 14:00:31.552 [cluster-ClusterId{value='62b520d4953cca6773eb9320', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Exception in monitor thread while connecting to server 10.248.50.224:27017
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:701)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:579)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:415)
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:374)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:216)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:718)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:576)
+	... 5 common frames omitted
+2022-06-24 14:00:31.652 [cluster-ClusterId{value='62b520d4953cca6773eb9320', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:7, serverValue:4558}] to 10.248.50.224:27017
+2022-06-24 14:00:31.653 [cluster-ClusterId{value='62b520d4953cca6773eb9320', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Monitor thread successfully connected to server with description ServerDescription{address=10.248.50.224:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=97616869}
+2022-06-24 14:00:31.830 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool:  HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=24m17s239ms).
+2022-06-24 14:32:18.816 [main] INFO  com.example.springdemo.SpringDemoApplication:  Starting SpringDemoApplication using Java 1.8.0_131 on localhost with PID 3851 (/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes started by raoqingjia in /Users/raoqingjia/WebstormProjects/project_private/spring-demo)
+2022-06-24 14:32:18.819 [main] INFO  com.example.springdemo.SpringDemoApplication:  No active profile set, falling back to 1 default profile: "default"
+2022-06-24 14:32:19.421 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-06-24 14:32:19.421 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-06-24 14:32:19.433 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 6 ms. Found 0 MongoDB repository interfaces.
+2022-06-24 14:32:19.445 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-06-24 14:32:19.446 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-06-24 14:32:19.458 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2022-06-24 14:32:19.906 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat initialized with port(s): 8081 (http)
+2022-06-24 14:32:19.914 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Initializing ProtocolHandler ["http-nio-8081"]
+2022-06-24 14:32:19.914 [main] INFO  org.apache.catalina.core.StandardService:  Starting service [Tomcat]
+2022-06-24 14:32:19.914 [main] INFO  org.apache.catalina.core.StandardEngine:  Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-06-24 14:32:19.968 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring embedded WebApplicationContext
+2022-06-24 14:32:19.968 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:  Root WebApplicationContext: initialization completed in 1117 ms
+2022-06-24 14:32:20.081 [main] INFO  org.mongodb.driver.cluster:  Cluster created with settings {hosts=[10.248.50.224:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-06-24 14:32:20.302 [cluster-ClusterId{value='62b55a745c006730a6f85d16', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:1, serverValue:4559}] to 10.248.50.224:27017
+2022-06-24 14:32:20.302 [cluster-rtt-ClusterId{value='62b55a745c006730a6f85d16', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:2, serverValue:4560}] to 10.248.50.224:27017
+2022-06-24 14:32:20.303 [cluster-ClusterId{value='62b55a745c006730a6f85d16', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Monitor thread successfully connected to server with description ServerDescription{address=10.248.50.224:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=191572645}
+2022-06-24 14:32:20.580 [main] INFO  c.e.springdemo.config.DatasourceConfigMysqlOmss:  SqlSessionFactoryMysql obtained
+2022-06-24 14:32:20.600 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  sentinel master: [crm]
+2022-06-24 14:32:20.601 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.223:13001
+2022-06-24 14:32:20.601 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.224:13002
+2022-06-24 14:32:20.605 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  LettuceConnectionFactorySentinel bean created
+2022-06-24 14:32:20.797 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  StringRedisTemplateSentinel bean created
+2022-06-24 14:32:20.828 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:  Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'shaprmController': Unsatisfied dependency expressed through field 'shaprmService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'shaprmService': Unsatisfied dependency expressed through field 'locationMapper'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'locationMapper' defined in file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/com/example/springdemo/dao/shparm/LocationMapper.class]: Cannot resolve reference to bean 'SqlSessionFactoryMysqlShparm' while setting bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'SqlSessionFactoryMysqlShparm' defined in class path resource [com/example/springdemo/config/DatasourceConfigMysqlShaprm.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactoryMysql' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/ShparmNationMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/ShparmNationMapper.xml]'. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.example.springdemo.dao.shparm.ShparmNationMapper.BaseResultMap
+2022-06-24 14:32:20.949 [main] INFO  org.apache.catalina.core.StandardService:  Stopping service [Tomcat]
+2022-06-24 14:32:20.961 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener:  
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-06-24 14:32:20.990 [main] ERROR org.springframework.boot.SpringApplication:  Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'shaprmController': Unsatisfied dependency expressed through field 'shaprmService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'shaprmService': Unsatisfied dependency expressed through field 'locationMapper'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'locationMapper' defined in file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/com/example/springdemo/dao/shparm/LocationMapper.class]: Cannot resolve reference to bean 'SqlSessionFactoryMysqlShparm' while setting bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'SqlSessionFactoryMysqlShparm' defined in class path resource [com/example/springdemo/config/DatasourceConfigMysqlShaprm.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactoryMysql' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/ShparmNationMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/ShparmNationMapper.xml]'. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.example.springdemo.dao.shparm.ShparmNationMapper.BaseResultMap
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at com.example.springdemo.SpringDemoApplication.main(SpringDemoApplication.java:10)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'shaprmService': Unsatisfied dependency expressed through field 'locationMapper'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'locationMapper' defined in file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/com/example/springdemo/dao/shparm/LocationMapper.class]: Cannot resolve reference to bean 'SqlSessionFactoryMysqlShparm' while setting bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'SqlSessionFactoryMysqlShparm' defined in class path resource [com/example/springdemo/config/DatasourceConfigMysqlShaprm.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactoryMysql' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/ShparmNationMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/ShparmNationMapper.xml]'. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.example.springdemo.dao.shparm.ShparmNationMapper.BaseResultMap
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+	... 20 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'locationMapper' defined in file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/com/example/springdemo/dao/shparm/LocationMapper.class]: Cannot resolve reference to bean 'SqlSessionFactoryMysqlShparm' while setting bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'SqlSessionFactoryMysqlShparm' defined in class path resource [com/example/springdemo/config/DatasourceConfigMysqlShaprm.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactoryMysql' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/ShparmNationMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/ShparmNationMapper.xml]'. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.example.springdemo.dao.shparm.ShparmNationMapper.BaseResultMap
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:342)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:113)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1707)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1452)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+	... 34 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'SqlSessionFactoryMysqlShparm' defined in class path resource [com/example/springdemo/config/DatasourceConfigMysqlShaprm.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactoryMysql' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/ShparmNationMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/ShparmNationMapper.xml]'. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.example.springdemo.dao.shparm.ShparmNationMapper.BaseResultMap
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:330)
+	... 47 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactoryMysql' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/ShparmNationMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/ShparmNationMapper.xml]'. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.example.springdemo.dao.shparm.ShparmNationMapper.BaseResultMap
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 57 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/ShparmNationMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/ShparmNationMapper.xml]'. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.example.springdemo.dao.shparm.ShparmNationMapper.BaseResultMap
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:613)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:491)
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:633)
+	at com.example.springdemo.config.DatasourceConfigMysqlShaprm.sqlSessionFactoryMysql(DatasourceConfigMysqlShaprm.java:62)
+	at com.example.springdemo.config.DatasourceConfigMysqlShaprm$$EnhancerBySpringCGLIB$$6a0f5f26.CGLIB$sqlSessionFactoryMysql$1(<generated>)
+	at com.example.springdemo.config.DatasourceConfigMysqlShaprm$$EnhancerBySpringCGLIB$$6a0f5f26$$FastClassBySpringCGLIB$$9c6af0b4.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.example.springdemo.config.DatasourceConfigMysqlShaprm$$EnhancerBySpringCGLIB$$6a0f5f26.sqlSessionFactoryMysql(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 58 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/ShparmNationMapper.xml]'. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.example.springdemo.dao.shparm.ShparmNationMapper.BaseResultMap
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:95)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:611)
+	... 71 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.example.springdemo.dao.shparm.ShparmNationMapper.BaseResultMap
+	at org.apache.ibatis.session.Configuration$StrictMap.put(Configuration.java:1037)
+	at org.apache.ibatis.session.Configuration$StrictMap.put(Configuration.java:993)
+	at org.apache.ibatis.session.Configuration.addResultMap(Configuration.java:749)
+	at org.apache.ibatis.builder.MapperBuilderAssistant.addResultMap(MapperBuilderAssistant.java:209)
+	at org.apache.ibatis.builder.ResultMapResolver.resolve(ResultMapResolver.java:47)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:289)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:254)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:246)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:119)
+	... 73 common frames omitted
+2022-06-24 14:43:16.227 [main] INFO  com.example.springdemo.SpringDemoApplication:  Starting SpringDemoApplication using Java 1.8.0_131 on localhost with PID 3915 (/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes started by raoqingjia in /Users/raoqingjia/WebstormProjects/project_private/spring-demo)
+2022-06-24 14:43:16.229 [main] INFO  com.example.springdemo.SpringDemoApplication:  No active profile set, falling back to 1 default profile: "default"
+2022-06-24 14:43:16.710 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-06-24 14:43:16.710 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-06-24 14:43:16.719 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 5 ms. Found 0 MongoDB repository interfaces.
+2022-06-24 14:43:16.727 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-06-24 14:43:16.728 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-06-24 14:43:16.736 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2022-06-24 14:43:17.089 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat initialized with port(s): 8081 (http)
+2022-06-24 14:43:17.094 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Initializing ProtocolHandler ["http-nio-8081"]
+2022-06-24 14:43:17.095 [main] INFO  org.apache.catalina.core.StandardService:  Starting service [Tomcat]
+2022-06-24 14:43:17.095 [main] INFO  org.apache.catalina.core.StandardEngine:  Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-06-24 14:43:17.142 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring embedded WebApplicationContext
+2022-06-24 14:43:17.143 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:  Root WebApplicationContext: initialization completed in 887 ms
+2022-06-24 14:43:17.231 [main] INFO  org.mongodb.driver.cluster:  Cluster created with settings {hosts=[10.248.50.224:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-06-24 14:43:17.387 [cluster-ClusterId{value='62b55d0556afe06d3bed1f7d', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:1, serverValue:4561}] to 10.248.50.224:27017
+2022-06-24 14:43:17.387 [cluster-rtt-ClusterId{value='62b55d0556afe06d3bed1f7d', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:2, serverValue:4562}] to 10.248.50.224:27017
+2022-06-24 14:43:17.387 [cluster-ClusterId{value='62b55d0556afe06d3bed1f7d', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Monitor thread successfully connected to server with description ServerDescription{address=10.248.50.224:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=130073903}
+2022-06-24 14:43:17.631 [main] INFO  c.e.springdemo.config.DatasourceConfigMysqlOmss:  SqlSessionFactoryMysql obtained
+2022-06-24 14:43:17.646 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  sentinel master: [crm]
+2022-06-24 14:43:17.647 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.223:13001
+2022-06-24 14:43:17.647 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.224:13002
+2022-06-24 14:43:17.649 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  LettuceConnectionFactorySentinel bean created
+2022-06-24 14:43:17.788 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  StringRedisTemplateSentinel bean created
+2022-06-24 14:43:17.820 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:  Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'shaprmController': Unsatisfied dependency expressed through field 'shaprmService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'shaprmService': Unsatisfied dependency expressed through field 'locationMapper'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'locationMapper' defined in file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/com/example/springdemo/dao/shparm/LocationMapper.class]: Cannot resolve reference to bean 'SqlSessionFactoryMysqlShparm' while setting bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'SqlSessionFactoryMysqlShparm' defined in class path resource [com/example/springdemo/config/DatasourceConfigMysqlShaprm.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactoryMysql' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/ShparmNationMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/ShparmNationMapper.xml]'. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.example.springdemo.dao.shparm.ShparmNationMapper.BaseResultMap
+2022-06-24 14:43:17.935 [main] INFO  org.apache.catalina.core.StandardService:  Stopping service [Tomcat]
+2022-06-24 14:43:17.944 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener:  
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-06-24 14:43:17.963 [main] ERROR org.springframework.boot.SpringApplication:  Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'shaprmController': Unsatisfied dependency expressed through field 'shaprmService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'shaprmService': Unsatisfied dependency expressed through field 'locationMapper'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'locationMapper' defined in file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/com/example/springdemo/dao/shparm/LocationMapper.class]: Cannot resolve reference to bean 'SqlSessionFactoryMysqlShparm' while setting bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'SqlSessionFactoryMysqlShparm' defined in class path resource [com/example/springdemo/config/DatasourceConfigMysqlShaprm.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactoryMysql' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/ShparmNationMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/ShparmNationMapper.xml]'. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.example.springdemo.dao.shparm.ShparmNationMapper.BaseResultMap
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at com.example.springdemo.SpringDemoApplication.main(SpringDemoApplication.java:10)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'shaprmService': Unsatisfied dependency expressed through field 'locationMapper'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'locationMapper' defined in file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/com/example/springdemo/dao/shparm/LocationMapper.class]: Cannot resolve reference to bean 'SqlSessionFactoryMysqlShparm' while setting bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'SqlSessionFactoryMysqlShparm' defined in class path resource [com/example/springdemo/config/DatasourceConfigMysqlShaprm.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactoryMysql' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/ShparmNationMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/ShparmNationMapper.xml]'. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.example.springdemo.dao.shparm.ShparmNationMapper.BaseResultMap
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+	... 20 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'locationMapper' defined in file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/com/example/springdemo/dao/shparm/LocationMapper.class]: Cannot resolve reference to bean 'SqlSessionFactoryMysqlShparm' while setting bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'SqlSessionFactoryMysqlShparm' defined in class path resource [com/example/springdemo/config/DatasourceConfigMysqlShaprm.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactoryMysql' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/ShparmNationMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/ShparmNationMapper.xml]'. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.example.springdemo.dao.shparm.ShparmNationMapper.BaseResultMap
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:342)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:113)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1707)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1452)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+	... 34 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'SqlSessionFactoryMysqlShparm' defined in class path resource [com/example/springdemo/config/DatasourceConfigMysqlShaprm.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactoryMysql' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/ShparmNationMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/ShparmNationMapper.xml]'. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.example.springdemo.dao.shparm.ShparmNationMapper.BaseResultMap
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:330)
+	... 47 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactoryMysql' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/ShparmNationMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/ShparmNationMapper.xml]'. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.example.springdemo.dao.shparm.ShparmNationMapper.BaseResultMap
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 57 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/ShparmNationMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/ShparmNationMapper.xml]'. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.example.springdemo.dao.shparm.ShparmNationMapper.BaseResultMap
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:613)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:491)
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:633)
+	at com.example.springdemo.config.DatasourceConfigMysqlShaprm.sqlSessionFactoryMysql(DatasourceConfigMysqlShaprm.java:62)
+	at com.example.springdemo.config.DatasourceConfigMysqlShaprm$$EnhancerBySpringCGLIB$$3638b9ca.CGLIB$sqlSessionFactoryMysql$1(<generated>)
+	at com.example.springdemo.config.DatasourceConfigMysqlShaprm$$EnhancerBySpringCGLIB$$3638b9ca$$FastClassBySpringCGLIB$$84c598bb.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.example.springdemo.config.DatasourceConfigMysqlShaprm$$EnhancerBySpringCGLIB$$3638b9ca.sqlSessionFactoryMysql(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 58 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes/mapper/shparm/ShparmNationMapper.xml]'. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.example.springdemo.dao.shparm.ShparmNationMapper.BaseResultMap
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:95)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:611)
+	... 71 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.example.springdemo.dao.shparm.ShparmNationMapper.BaseResultMap
+	at org.apache.ibatis.session.Configuration$StrictMap.put(Configuration.java:1037)
+	at org.apache.ibatis.session.Configuration$StrictMap.put(Configuration.java:993)
+	at org.apache.ibatis.session.Configuration.addResultMap(Configuration.java:749)
+	at org.apache.ibatis.builder.MapperBuilderAssistant.addResultMap(MapperBuilderAssistant.java:209)
+	at org.apache.ibatis.builder.ResultMapResolver.resolve(ResultMapResolver.java:47)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:289)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:254)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:246)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:119)
+	... 73 common frames omitted
+2022-06-24 14:47:03.453 [main] INFO  com.example.springdemo.SpringDemoApplication:  Starting SpringDemoApplication using Java 1.8.0_131 on localhost with PID 3952 (/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes started by raoqingjia in /Users/raoqingjia/WebstormProjects/project_private/spring-demo)
+2022-06-24 14:47:03.456 [main] INFO  com.example.springdemo.SpringDemoApplication:  No active profile set, falling back to 1 default profile: "default"
+2022-06-24 14:47:04.047 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-06-24 14:47:04.048 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-06-24 14:47:04.057 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 6 ms. Found 0 MongoDB repository interfaces.
+2022-06-24 14:47:04.066 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-06-24 14:47:04.067 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-06-24 14:47:04.075 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2022-06-24 14:47:04.460 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat initialized with port(s): 8081 (http)
+2022-06-24 14:47:04.467 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Initializing ProtocolHandler ["http-nio-8081"]
+2022-06-24 14:47:04.467 [main] INFO  org.apache.catalina.core.StandardService:  Starting service [Tomcat]
+2022-06-24 14:47:04.467 [main] INFO  org.apache.catalina.core.StandardEngine:  Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-06-24 14:47:04.524 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring embedded WebApplicationContext
+2022-06-24 14:47:04.524 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:  Root WebApplicationContext: initialization completed in 1039 ms
+2022-06-24 14:47:04.628 [main] INFO  org.mongodb.driver.cluster:  Cluster created with settings {hosts=[10.248.50.224:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-06-24 14:47:04.794 [cluster-ClusterId{value='62b55de8d0434d206635d470', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:1, serverValue:4563}] to 10.248.50.224:27017
+2022-06-24 14:47:04.794 [cluster-rtt-ClusterId{value='62b55de8d0434d206635d470', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:2, serverValue:4564}] to 10.248.50.224:27017
+2022-06-24 14:47:04.794 [cluster-ClusterId{value='62b55de8d0434d206635d470', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Monitor thread successfully connected to server with description ServerDescription{address=10.248.50.224:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=142753292}
+2022-06-24 14:47:05.024 [main] INFO  c.e.springdemo.config.DatasourceConfigMysqlOmss:  SqlSessionFactoryMysql obtained
+2022-06-24 14:47:05.038 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  sentinel master: [crm]
+2022-06-24 14:47:05.038 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.223:13001
+2022-06-24 14:47:05.039 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.224:13002
+2022-06-24 14:47:05.041 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  LettuceConnectionFactorySentinel bean created
+2022-06-24 14:47:05.168 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  StringRedisTemplateSentinel bean created
+2022-06-24 14:47:05.208 [main] INFO  c.e.springdemo.config.DatasourceConfigMysqlShaprm:  SqlSessionFactoryMysql obtained
+2022-06-24 14:47:05.211 [main] INFO  c.e.springdemo.config.DatasourceConfigMysqlOmss:  transactionManagerMysql obtained
+2022-06-24 14:47:05.652 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Starting ProtocolHandler ["http-nio-8081"]
+2022-06-24 14:47:05.680 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:  Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8081 is already in use
+2022-06-24 14:47:05.814 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Pausing ProtocolHandler ["http-nio-8081"]
+2022-06-24 14:47:05.814 [main] INFO  org.apache.catalina.core.StandardService:  Stopping service [Tomcat]
+2022-06-24 14:47:05.817 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Stopping ProtocolHandler ["http-nio-8081"]
+2022-06-24 14:47:05.817 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Destroying ProtocolHandler ["http-nio-8081"]
+2022-06-24 14:47:05.823 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener:  
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-06-24 14:47:05.836 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter:  
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8081 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
+
+2022-06-24 14:47:37.439 [main] INFO  com.example.springdemo.SpringDemoApplication:  Starting SpringDemoApplication using Java 1.8.0_131 on localhost with PID 3966 (/Users/raoqingjia/WebstormProjects/project_private/spring-demo/target/classes started by raoqingjia in /Users/raoqingjia/WebstormProjects/project_private/spring-demo)
+2022-06-24 14:47:37.442 [main] INFO  com.example.springdemo.SpringDemoApplication:  No active profile set, falling back to 1 default profile: "default"
+2022-06-24 14:47:38.005 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-06-24 14:47:38.006 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-06-24 14:47:38.014 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 5 ms. Found 0 MongoDB repository interfaces.
+2022-06-24 14:47:38.023 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-06-24 14:47:38.023 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-06-24 14:47:38.032 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:  Finished Spring Data repository scanning in 3 ms. Found 0 Redis repository interfaces.
+2022-06-24 14:47:38.393 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat initialized with port(s): 8082 (http)
+2022-06-24 14:47:38.399 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Initializing ProtocolHandler ["http-nio-8082"]
+2022-06-24 14:47:38.400 [main] INFO  org.apache.catalina.core.StandardService:  Starting service [Tomcat]
+2022-06-24 14:47:38.400 [main] INFO  org.apache.catalina.core.StandardEngine:  Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-06-24 14:47:38.452 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring embedded WebApplicationContext
+2022-06-24 14:47:38.453 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:  Root WebApplicationContext: initialization completed in 981 ms
+2022-06-24 14:47:38.534 [main] INFO  org.mongodb.driver.cluster:  Cluster created with settings {hosts=[10.248.50.224:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-06-24 14:47:38.670 [cluster-ClusterId{value='62b55e0a57039079a714d5a3', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:1, serverValue:4566}] to 10.248.50.224:27017
+2022-06-24 14:47:38.670 [cluster-rtt-ClusterId{value='62b55e0a57039079a714d5a3', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.connection:  Opened connection [connectionId{localValue:2, serverValue:4565}] to 10.248.50.224:27017
+2022-06-24 14:47:38.670 [cluster-ClusterId{value='62b55e0a57039079a714d5a3', description='null'}-10.248.50.224:27017] INFO  org.mongodb.driver.cluster:  Monitor thread successfully connected to server with description ServerDescription{address=10.248.50.224:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=112466044}
+2022-06-24 14:47:38.904 [main] INFO  c.e.springdemo.config.DatasourceConfigMysqlOmss:  SqlSessionFactoryMysql obtained
+2022-06-24 14:47:38.921 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  sentinel master: [crm]
+2022-06-24 14:47:38.922 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.223:13001
+2022-06-24 14:47:38.922 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  10.248.50.224:13002
+2022-06-24 14:47:38.926 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  LettuceConnectionFactorySentinel bean created
+2022-06-24 14:47:39.076 [main] INFO  com.example.springdemo.config.RedisSentinelConfig:  StringRedisTemplateSentinel bean created
+2022-06-24 14:47:39.133 [main] INFO  c.e.springdemo.config.DatasourceConfigMysqlShaprm:  SqlSessionFactoryMysql obtained
+2022-06-24 14:47:39.137 [main] INFO  c.e.springdemo.config.DatasourceConfigMysqlOmss:  transactionManagerMysql obtained
+2022-06-24 14:47:39.549 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:  Starting ProtocolHandler ["http-nio-8082"]
+2022-06-24 14:47:39.572 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:  Tomcat started on port(s): 8082 (http) with context path ''
+2022-06-24 14:47:39.583 [main] INFO  com.example.springdemo.SpringDemoApplication:  Started SpringDemoApplication in 2.522 seconds (JVM running for 2.994)
+2022-06-24 14:48:23.395 [http-nio-8082-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]:  Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-24 14:48:23.395 [http-nio-8082-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:  Initializing Servlet 'dispatcherServlet'
+2022-06-24 14:48:23.396 [http-nio-8082-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:  Completed initialization in 1 ms
+2022-06-24 14:48:23.440 [http-nio-8082-exec-1] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Starting...
+2022-06-24 14:48:23.441 [http-nio-8082-exec-1] WARN  com.zaxxer.hikari.util.DriverDataSource:  Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2022-06-24 14:48:24.069 [http-nio-8082-exec-1] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Start completed.
+2022-06-24 15:13:52.319 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Shutdown initiated...
+2022-06-24 15:13:52.333 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource:  HikariPool-1 - Shutdown completed.

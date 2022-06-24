@@ -1,6 +1,7 @@
 package com.example.springdemo.controller;
 
 import com.example.springdemo.bo.CountryItem;
+import com.example.springdemo.pojo.shparm.ShparmNation;
 import com.example.springdemo.service.impl.ShaprmService;
 import com.example.springdemo.utils.BaseResult;
 import com.github.pagehelper.PageInfo;
@@ -25,4 +26,11 @@ public class ShaprmController {
     public BaseResult selectCountry(@RequestParam String countryName , @RequestParam String pageSize ,@RequestParam String pageNum){
         return shaprmService.selectCountry(countryName,pageNum,pageSize);
     }
+
+    // http://localhost:8081/shaprm/selectByPrimaryKey?id=1
+    @GetMapping("/selectByPrimaryKey")
+    public ShparmNation selectByPrimaryKey(@RequestParam Integer id){
+        return shaprmService.selectByPrimaryKey(id);
+    }
+
 }
