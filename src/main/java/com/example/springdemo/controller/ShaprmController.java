@@ -1,18 +1,13 @@
 package com.example.springdemo.controller;
 
-import com.example.springdemo.bo.CountryItem;
 import com.example.springdemo.pojo.shparm.ShparmNation;
 import com.example.springdemo.service.impl.ShaprmService;
 import com.example.springdemo.utils.BaseResult;
-import com.github.pagehelper.PageInfo;
-import org.junit.runners.Parameterized;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/shaprm")

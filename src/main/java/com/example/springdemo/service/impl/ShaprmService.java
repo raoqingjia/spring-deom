@@ -1,6 +1,6 @@
 package com.example.springdemo.service.impl;
 
-import com.example.springdemo.bo.CountryItem;
+import com.example.springdemo.pojo.shparm.CountryItem;
 import com.example.springdemo.dao.shparm.LocationMapper;
 import com.example.springdemo.dao.shparm.ShparmNationMapper;
 import com.example.springdemo.pojo.shparm.ShparmNation;
@@ -9,7 +9,6 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 

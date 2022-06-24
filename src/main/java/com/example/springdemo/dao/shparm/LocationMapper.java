@@ -1,6 +1,6 @@
 package com.example.springdemo.dao.shparm;
 
-import com.example.springdemo.bo.CountryItem;
+import com.example.springdemo.pojo.shparm.CountryItem;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

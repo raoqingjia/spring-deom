@@ -1,4 +1,4 @@
-package com.example.springdemo.bo;
+package com.example.springdemo.pojo.shparm;
 
 import lombok.Data;
 
