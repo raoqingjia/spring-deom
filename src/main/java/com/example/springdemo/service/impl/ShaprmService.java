@@ -2,8 +2,12 @@ package com.example.springdemo.service.impl;
 
 import com.example.springdemo.bo.CountryItem;
 import com.example.springdemo.dao.shparm.LocationMapper;
+import com.example.springdemo.utils.BaseResult;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -13,9 +17,18 @@ public class ShaprmService {
     @Autowired
     public LocationMapper locationMapper;
 
-    public List<CountryItem> selectCountry(String countryName){
-
-        return locationMapper.selectCountryList(countryName);
+    public BaseResult selectCountry(String countryName ,String pageNum , String pageSize ){
+        BaseResult result = new BaseResult();
+        try {
+            PageHelper.startPage(Integer.parseInt(pageNum), Integer.parseInt(pageSize));
+            List<CountryItem> countryList = locationMapper.selectCountryList(countryName);
+            // 分页工具分页
+            PageInfo pageInfo = new PageInfo(countryList);
+            result.setSuccess(pageInfo);
+        } catch (Exception e) {
+            result.setError(e.getMessage());
+        }
+        return result;
     }
 
 }

@@ -2,6 +2,8 @@ package com.example.springdemo.controller;
 
 import com.example.springdemo.bo.CountryItem;
 import com.example.springdemo.service.impl.ShaprmService;
+import com.example.springdemo.utils.BaseResult;
+import com.github.pagehelper.PageInfo;
 import org.junit.runners.Parameterized;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,9 +20,9 @@ public class ShaprmController {
     @Autowired
     public ShaprmService shaprmService;
 
-    // http://localhost:8081/shaprm/selectCountry?countryName=
+    // http://localhost:8081/shaprm/selectCountry?countryName=&pageNum=1&pageSize=10
     @GetMapping("/selectCountry")
-    public List<CountryItem> selectCountry(@RequestParam String countryName){
-        return shaprmService.selectCountry(countryName);
+    public BaseResult selectCountry(@RequestParam String countryName , @RequestParam String pageSize ,@RequestParam String pageNum){
+        return shaprmService.selectCountry(countryName,pageNum,pageSize);
     }
 }

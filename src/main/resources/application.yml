@@ -58,3 +58,4 @@ spring:
 
 mybatis:
   mapper-locations: classpath:mapping/*Mapper.xml   #告诉mybatis去哪里扫描mapper
+

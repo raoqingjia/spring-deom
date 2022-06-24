@@ -1,8 +1,12 @@
 package com.example.springdemo.config;
 import javax.sql.DataSource;
+
+import com.github.pagehelper.PageInterceptor;
+import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
+
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -15,6 +19,8 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import com.zaxxer.hikari.HikariDataSource;
 
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.Properties;
 
 @Slf4j
 @Configuration
@@ -38,8 +44,25 @@ public class DatasourceConfigMysqlShaprm {
         sessionFactory.setConfigLocation(new ClassPathResource(MYBATIS_CONFIG));
         sessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().getResources(MAPPER_LOCATION_MYSQL));
         sessionFactory.setDataSource(dataSource);
+
+        //分页插件
+        Interceptor interceptor = new PageInterceptor();
+        Properties properties = new Properties();
+        //数据库
+        properties.setProperty("helperDialect", "mysql");
+        //是否将参数offset作为PageNum使用
+        properties.setProperty("offsetAsPageNum", "true");
+        //是否进行count查询
+        properties.setProperty("rowBoundsWithCount", "true");
+        //是否分页合理化
+        properties.setProperty("reasonable", "false");
+        interceptor.setProperties(properties);
+        sessionFactory.setPlugins(new Interceptor[] {interceptor});
+
         SqlSessionFactory factory = sessionFactory.getObject();
         log.info("SqlSessionFactoryMysql obtained");
+
+
         return factory;
     }
 

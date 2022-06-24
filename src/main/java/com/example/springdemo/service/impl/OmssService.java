@@ -1,6 +1,9 @@
 package com.example.springdemo.service.impl;
 
+import com.example.springdemo.bo.CountryItem;
 import com.example.springdemo.dao.omss.DutyMapper;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,9 +16,14 @@ public class OmssService {
     @Autowired
     public DutyMapper dutyMapper;
 
-    public List<Map> selectDutyUser(String userName){
+    public PageInfo selectDutyUser(String userName ,String pageNum , String pageSize ){
 
-        return dutyMapper.selectDutyUser(userName);
+        PageHelper.startPage(Integer.parseInt(pageNum), Integer.parseInt(pageSize));
+        List<Map> dutyUser = dutyMapper.selectDutyUser(userName);
+        // 分页工具分页
+        PageInfo pageInfo = new PageInfo(dutyUser);
+
+        return pageInfo;
     }
 
 }
