@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.springdemo.dao.omss.SystemOperationLog201912Mapper" >
+  <resultMap id="BaseResultMap" type="com.example.springdemo.pojo.omss.SystemOperationLog201912" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="log_type" property="logType" jdbcType="VARCHAR" />
+    <result column="operation_type" property="operationType" jdbcType="VARCHAR" />
+    <result column="operation_info" property="operationInfo" jdbcType="VARCHAR" />
+    <result column="operation_state" property="operationState" jdbcType="VARCHAR" />
+    <result column="operation_result" property="operationResult" jdbcType="VARCHAR" />
+    <result column="state" property="state" jdbcType="INTEGER" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+    <result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
+    <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, log_type, operation_type, operation_info, operation_state, operation_result, 
+    state, create_date, create_by, update_date, update_by, remark
+  </sql>
+
+  <select id="selectSystemOperationLogAll" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    from system_operation_log_201912
+  </select>
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from system_operation_log_201912
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from system_operation_log_201912
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.example.springdemo.pojo.omss.SystemOperationLog201912" >
+    insert into system_operation_log_201912 (id, log_type, operation_type, 
+      operation_info, operation_state, operation_result, 
+      state, create_date, create_by, 
+      update_date, update_by, remark
+      )
+    values (#{id,jdbcType=BIGINT}, #{logType,jdbcType=VARCHAR}, #{operationType,jdbcType=VARCHAR}, 
+      #{operationInfo,jdbcType=VARCHAR}, #{operationState,jdbcType=VARCHAR}, #{operationResult,jdbcType=VARCHAR}, 
+      #{state,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, #{createBy,jdbcType=VARCHAR}, 
+      #{updateDate,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.springdemo.pojo.omss.SystemOperationLog201912" >
+    insert into system_operation_log_201912
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="logType != null" >
+        log_type,
+      </if>
+      <if test="operationType != null" >
+        operation_type,
+      </if>
+      <if test="operationInfo != null" >
+        operation_info,
+      </if>
+      <if test="operationState != null" >
+        operation_state,
+      </if>
+      <if test="operationResult != null" >
+        operation_result,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+      <if test="createBy != null" >
+        create_by,
+      </if>
+      <if test="updateDate != null" >
+        update_date,
+      </if>
+      <if test="updateBy != null" >
+        update_by,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="logType != null" >
+        #{logType,jdbcType=VARCHAR},
+      </if>
+      <if test="operationType != null" >
+        #{operationType,jdbcType=VARCHAR},
+      </if>
+      <if test="operationInfo != null" >
+        #{operationInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="operationState != null" >
+        #{operationState,jdbcType=VARCHAR},
+      </if>
+      <if test="operationResult != null" >
+        #{operationResult,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.springdemo.pojo.omss.SystemOperationLog201912" >
+    update system_operation_log_201912
+    <set >
+      <if test="logType != null" >
+        log_type = #{logType,jdbcType=VARCHAR},
+      </if>
+      <if test="operationType != null" >
+        operation_type = #{operationType,jdbcType=VARCHAR},
+      </if>
+      <if test="operationInfo != null" >
+        operation_info = #{operationInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="operationState != null" >
+        operation_state = #{operationState,jdbcType=VARCHAR},
+      </if>
+      <if test="operationResult != null" >
+        operation_result = #{operationResult,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        state = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        update_date = #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        update_by = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.springdemo.pojo.omss.SystemOperationLog201912" >
+    update system_operation_log_201912
+    set log_type = #{logType,jdbcType=VARCHAR},
+      operation_type = #{operationType,jdbcType=VARCHAR},
+      operation_info = #{operationInfo,jdbcType=VARCHAR},
+      operation_state = #{operationState,jdbcType=VARCHAR},
+      operation_result = #{operationResult,jdbcType=VARCHAR},
+      state = #{state,jdbcType=INTEGER},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=VARCHAR},
+      update_date = #{updateDate,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

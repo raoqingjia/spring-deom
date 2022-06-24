@@ -50,6 +50,9 @@
         <table tableName="system_operation_log_201912" domainObjectName="SystemOperationLog201912"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false"></table>
+               selectByExampleQueryId="false">
+            <columnOverride column="operation_info" javaType="java.lang.String" jdbcType="VARCHAR"/>
+            <columnOverride column="operation_result" javaType="java.lang.String" jdbcType="VARCHAR"/>
+        </table>
     </context>
 </generatorConfiguration>
