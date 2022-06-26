@@ -2,7 +2,7 @@ package com.example.springdemo.service.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.example.springdemo.bean.User;
+import com.example.springdemo.pojo.mogo.User;
 import com.example.springdemo.utils.BaseResult;
 import com.example.springdemo.utils.RedisUtil;
 import com.example.springdemo.utils.StringUtils;
@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
-import reactor.core.Fuseable;
 
 import java.util.concurrent.TimeUnit;
 

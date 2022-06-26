@@ -1,5 +1,5 @@
 package com.example.springdemo.controller;
-import com.example.springdemo.bean.User;
+import com.example.springdemo.pojo.mogo.User;
 import com.example.springdemo.service.impl.MongodbService;
 import com.example.springdemo.utils.BaseResult;
 import org.springframework.beans.factory.annotation.Autowired;

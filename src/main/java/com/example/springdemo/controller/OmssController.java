@@ -1,18 +1,19 @@
 package com.example.springdemo.controller;
 
+import com.alibaba.excel.EasyExcel;
+import com.example.springdemo.listener.SystemOperationLogListener;
+import com.example.springdemo.pojo.omss.SystemOperationLog;
 import com.example.springdemo.service.impl.OmssService;
-import com.example.springdemo.utils.BaseResult;
 import com.github.pagehelper.PageInfo;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
-import java.util.List;
-import java.util.Map;
+import java.io.IOException;
 
+@Slf4j
 @RestController
 @RequestMapping("/omss")
 public class OmssController {
@@ -30,8 +31,14 @@ public class OmssController {
     @GetMapping("/systemOperationLogDownload")
     public void systemOperationLogDownload(HttpServletResponse response){
         omssService.systemOperationLogDownload(response);
-        // 这里如果返回具体的类，后台会报错
-//        No converter for XXX with preset Content-Type ‘application/vnd.ms-excel；charset=utf-8‘
-        //  https://blog.csdn.net/qq_42651201/article/details/120710224
+        // 这里如果返回具体的类，后台会报错 No converter for XXX with preset Content-Type ‘application/vnd.ms-excel；charset=utf-8‘,所以什么都不返回
+    }
+
+    // http://localhost:8081/omss/systemOperationLogUpload       systemOperationLogUpload multipartFile =>
+    @PostMapping("/systemOperationLogUpload")
+    public String systemOperationLogUpload(@RequestParam("file") MultipartFile multipartFile) throws IOException {
+        log.info("systemOperationLogUpload multipartFile =>",multipartFile);
+        EasyExcel.read(multipartFile.getInputStream(), SystemOperationLog.class, new SystemOperationLogListener(omssService)).sheet().doRead();
+        return "上传成功";
     }
 }

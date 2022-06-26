@@ -1,4 +1,4 @@
-package com.example.springdemo.bean;
+package com.example.springdemo.pojo.mogo;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -1,25 +1,25 @@
 package com.example.springdemo.pojo.omss;
 
 import com.alibaba.excel.annotation.ExcelProperty;
+import com.alibaba.excel.annotation.write.style.ColumnWidth;
 import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
 
 @Data
-public class SystemOperationLog201912 implements Serializable {
-
-    @ExcelProperty("序号")
+public class SystemOperationLog implements Serializable {
+    @ExcelProperty(value ="序号" , index = 0)
     private Long id;
-    @ExcelProperty("日志类型")
+    @ExcelProperty(value ="日志类型", index = 1)
     private String logType;
-    @ExcelProperty("操作类型")
+    @ExcelProperty({"操作","操作类型"})
     private String operationType;
-    @ExcelProperty("操作信息")
+    @ExcelProperty({"操作","操作信息"})
     private String operationInfo;
-    @ExcelProperty("操作状态")
+    @ExcelProperty({"操作","操作状态"})
     private String operationState;
-    @ExcelProperty("操作结果")
+    @ExcelProperty({"操作","操作结果"})
     private String operationResult;
     @ExcelProperty("是否注销")
     private Integer state;

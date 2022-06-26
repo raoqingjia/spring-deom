@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.springdemo.dao.omss.SystemOperationLogMapper" >
+  <resultMap id="BaseResultMap" type="com.example.springdemo.pojo.omss.SystemOperationLog" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="log_type" property="logType" jdbcType="VARCHAR" />
+    <result column="operation_type" property="operationType" jdbcType="VARCHAR" />
+    <result column="operation_info" property="operationInfo" jdbcType="VARCHAR" />
+    <result column="operation_state" property="operationState" jdbcType="VARCHAR" />
+    <result column="operation_result" property="operationResult" jdbcType="VARCHAR" />
+    <result column="state" property="state" jdbcType="INTEGER" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+    <result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
+    <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, log_type, operation_type, operation_info, operation_state, operation_result, 
+    state, create_date, create_by, update_date, update_by, remark
+  </sql>
+
+  <select id="selectSystemOperationLogAll" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    from system_operation_log_201912
+  </select>
+
+
+  <insert id="systemOperationLogUpload" parameterType="java.util.List" >
+    insert into system_operation_log_201912 (log_type, operation_type,
+      operation_info, operation_state, operation_result,
+      state , create_by, create_date, update_by, update_date ,remark )
+    values
+    <foreach index="index" separator="," collection="list" item="item">
+      (#{item.logType},
+      #{item.operationType},
+      #{item.operationInfo},
+      #{item.operationState},
+      #{item.operationResult},
+      #{item.state},
+      #{item.createBy},
+      #{item.createDate},
+      #{item.updateBy},
+      #{item.updateDate},
+      #{item.remark})
+    </foreach>
+  </insert>
+
+</mapper>
