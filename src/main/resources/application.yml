@@ -1,7 +1,17 @@
-server:
-  port: 8081
-  tomcat:
-    uri-encoding: utf-8
+
+eureka:
+  instance:
+    preferIpAddress: true   #这个是设置鼠标放在status上的时候，出现的提示，设置ip地址显示
+    instanceId: ${server.ip}:${server.port}  # 当前微服务外网的ip地址
+#     ipAddress: 10.254.14.111
+    leaseRenewalIntervalInSeconds: 25 #心跳时间，即服务续约间隔时间（默认为30秒）
+    leaseExpirationDurationInSeconds: 15 #租约有效期，即服务续约到期时间（默认为90秒）
+  client:
+    registerWithEureka: true  # 是否向eureka server 注册自己 如果你不想自己的实例被发现，而只想发现其他实例，配置为 false 即可
+    fetchRegistry: true     #  是否向eureka server 获取服务列表
+    serviceUrl:   # defaultZone为服务注册中心地址
+       defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@10.248.50.225:9013/eureka/,http://${spring.security.user.name}:${spring.security.user.password}@10.248.50.225:9014/eureka/
+# 其中获取ip，SpringCloud2.0版本对应的key值为${spring.cloud.clent.ip-address},网上流传大多为${spring.cloud.clent.ipAddress}
 
 spring:
   data:
@@ -10,7 +20,7 @@ spring:
   mysql:
     shparm:  # 阿里的druid就要将jdbcUrl改成url
        driverClassName: com.mysql.jdbc.Driver
-       jdbcUrl: jdbc:mysql://10.248.64.132:3307/abs_shparm?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+       jdbcUrl: jdbc:mysql://10.248.64.132:3307/abs_shparm?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
        username: root
        password: '!2#4%6&8'
     omss:
@@ -58,6 +68,39 @@ spring:
 
 mybatis:
   mapper-locations: classpath:mapping/*Mapper.xml   #告诉mybatis去哪里扫描mapper
+
+feign:
+  client:
+    config:
+      #default代表所有服务
+      default:
+        #feign客户端建立连接超时时间
+        connect-timeout: 10000
+        #feign客户端建立连接后读取资源超时时间
+        read-timeout: 20000
+      #而service-test表示当调用service-test这个服务时，用下面的配置
+      service-test:
+        connect-timeout: 10000
+        read-timeout: 20000
+
+
+ribbon:
+  OkToRetryOnAllOperations: false #对所有操作请求都进行重试,默认false
+  ReadTimeout: 60000   #负载均衡超时时间，默认值5000
+  ConnectTimeout: 3000 #ribbon请求连接的超时时间，默认值2000
+  MaxAutoRetries: 0     #对当前实例的重试次数，默认0
+  MaxAutoRetriesNextServer: 1 #对切换实例的重试次数，默认1
+
+hystrix:
+  command:
+    default:  #default全局有效，service id指定应用有效
+      execution:
+        timeout:
+          #如果enabled设置为false，则请求超时交给ribbon控制,为true,则超时作为熔断根据
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000 #断路器超时时间，默认1000ms
 
 
 
